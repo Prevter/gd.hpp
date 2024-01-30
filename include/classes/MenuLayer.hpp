@@ -4,11 +4,11 @@
 // ~~~~~~~~~~~~~~~~
 
 #pragma once
-#include "../utils/method.hpp"
+#include "../utils/class.hpp"
 
 namespace gd
 {
-    class MenuLayer
+    class MenuLayer : public BindableClassBase
     {
     public:
         inline static utils::BindableMethod<bool, bool(__fastcall *)(MenuLayer *), MenuLayer *> init;

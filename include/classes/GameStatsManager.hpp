@@ -4,18 +4,14 @@
 // ~~~~~~~~~~~~~~~~
 
 #pragma once
-#include "../utils/method.hpp"
+#include "../utils/class.hpp"
 
 namespace gd
 {
-    class GameStatsManager
+    class GameStatsManager : public BindableClassBase
     {
     public:
-        inline static utils::BindableMethod<
-            bool,
-            bool(__fastcall *)(GameStatsManager *, int, int, int),
-            GameStatsManager *, int, int>
-            isItemUnlocked;
+        inline static utils::BindableMethod<bool, bool(__fastcall *)(GameStatsManager *, int, int, int), GameStatsManager *, int, int> isItemUnlocked;
     };
 }
 
