@@ -6,7 +6,7 @@
 namespace gd
 {
     template <typename T>
-    void initMember(utils::BindableMember<T> &member, const char *name)
+    inline void initMember(utils::BindableMember<T> &member, const char *name)
     {
         if (maps::addresses.find(name) == maps::addresses.end())
             return;

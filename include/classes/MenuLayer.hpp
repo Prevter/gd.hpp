@@ -1,4 +1,4 @@
-// layers/MenuLayer.hpp
+// classes/MenuLayer.hpp
 // ~~~~~~~~~~~~~~~~
 // Contains definition for MenuLayer class.
 // ~~~~~~~~~~~~~~~~
@@ -17,7 +17,7 @@ namespace gd
 
 namespace gd::hooks
 {
-    bool __fastcall MenuLayer_init(MenuLayer *self)
+    inline bool __fastcall MenuLayer_init(MenuLayer *self)
     {
         if (!MenuLayer::init.isHooked())
             return MenuLayer::init(self);

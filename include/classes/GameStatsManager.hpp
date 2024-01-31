@@ -1,4 +1,4 @@
-// layers/GameStatsManager.hpp
+// classes/GameStatsManager.hpp
 // ~~~~~~~~~~~~~~~~
 // Contains definition for GameStatsManager class.
 // ~~~~~~~~~~~~~~~~
@@ -17,7 +17,7 @@ namespace gd
 
 namespace gd::hooks
 {
-    bool __fastcall GameStatsManager_isItemUnlocked(GameStatsManager *self, int, int itemType, int itemId)
+    inline bool __fastcall GameStatsManager_isItemUnlocked(GameStatsManager *self, int, int itemType, int itemId)
     {
         if (!GameStatsManager::isItemUnlocked.isHooked())
             return GameStatsManager::isItemUnlocked(self, itemType, itemId);

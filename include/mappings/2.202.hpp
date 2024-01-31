@@ -1,3 +1,5 @@
+#pragma once
+
 #include <map>
 #include <string>
 
@@ -11,17 +13,19 @@ namespace gd::maps::v2_202
         {"PlayLayer::~PlayLayer", 0x2DA240},
         {"PlayLayer::resetLevel", 0x2e8200},
         {"PlayLayer::levelComplete", 0x2DBC80},
-        {"PlayLayer::onExit", 0x2e9550},
-        {"PlayLayer::death", 0x2E4840},
+        {"PlayLayer::onQuit", 0x2e9550},
+        {"PlayLayer::destroyPlayer", 0x2E4840},
         {"PlayLayer::addObject", 0x2dfab0},
         {"PlayLayer::destroyObject", 0x19bf90},
         {"PlayLayer::pickupCoin", 0x19c140},
         {"PlayLayer::setStartPosObject", 0x198e10},
         {"PlayLayer::startMusic", 0x2e9470},
-        {"PlayLayer::removeAllCheckpoints", 0x2e8160},
+        {"PlayLayer::resetLevelFromStart", 0x2e8160},
+        {"PlayLayer::markCheckpoint", 0x2E6630},
 
         {"LevelEditorLayer::init", 0x238460},
-        {"LevelEditorLayer::onExit", 0xa2df0},
+
+        {"EditorPauseLayer::onExitEditor", 0xa2df0},
 
         {"GameManager::sharedState", 0x120860},
         {"GameManager::getGameVariable", 0x127a50},
@@ -32,9 +36,12 @@ namespace gd::maps::v2_202
         {"CCCircleWave::init", 0x232F0},
         {"CCCircleWave::draw", 0x23840},
 
-        {"UILayer::onCheck", 0x2E6630},
-
         {"GJBaseGameLayer::init", 0x18F210},
-        {"GJBaseGameLayer::handleInput", 0x1B59A0},
+        {"GJBaseGameLayer::handleButton", 0x1B59A0},
+    };
+
+    inline std::map<std::string, std::string> signatures = {
+        {"cocos2d::CCEGLView::swapBuffers", "?swapBuffers@CCEGLView@cocos2d@@UAEXXZ"},
+        {"cocos2d::CCEGLView::pollEvents", "?pollEvents@CCEGLView@cocos2d@@QAEXXZ"},
     };
 }

@@ -104,7 +104,7 @@ namespace gd::utils
 
             if (m_originalAddress == 0)
                 return UnhookResult::ADDRESS_NULL;
-                
+
             RemoveHook((void *)m_originalAddress);
 
             m_hooked = false;

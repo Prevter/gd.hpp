@@ -10,7 +10,10 @@ project(
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_library(gd.hpp INTERFACE)
-target_include_directories(gd.hpp INTERFACE "include")
+file(GLOB_RECURSE GD_HPP_SOURCES "src/*.cpp")
+
+add_library(gd.hpp STATIC ${GD_HPP_SOURCES})
+
+target_include_directories(gd.hpp PUBLIC include)
 
 add_library(gd.hpp::gd.hpp ALIAS gd.hpp)

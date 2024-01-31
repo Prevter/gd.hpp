@@ -1,6 +1,6 @@
-// utils/version.hpp
+// utils/platform/win32.hpp
 // ~~~~~~~~~~~~~~~~
-// Contains methods for getting the current version of the game.
+// Contains platform-specific includes for Windows.
 // ~~~~~~~~~~~~~~~~
 
 #pragma once
@@ -62,5 +62,10 @@ namespace gd::utils
         }
 
         return "Unknown";
+    }
+
+    inline uint32_t findExport(uintptr_t base, const std::string &name)
+    {
+        return reinterpret_cast<uint32_t>(GetProcAddress(reinterpret_cast<HMODULE>(base), name.c_str()));
     }
 }

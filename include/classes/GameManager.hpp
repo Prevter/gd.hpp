@@ -1,4 +1,4 @@
-// layers/GameManager.hpp
+// classes/GameManager.hpp
 // ~~~~~~~~~~~~~~~~
 // Contains definition for GameManager class.
 // ~~~~~~~~~~~~~~~~
@@ -24,7 +24,7 @@ namespace gd
 
 namespace gd::hooks
 {
-    GameManager *__stdcall GameManager_sharedState()
+    inline GameManager *__stdcall GameManager_sharedState()
     {
         if (!GameManager::sharedState.isHooked())
             return GameManager::sharedState();
@@ -33,7 +33,7 @@ namespace gd::hooks
         return hook();
     }
 
-    bool __fastcall GameManager_getGameVariable(GameManager *self, int, const char *name)
+    inline bool __fastcall GameManager_getGameVariable(GameManager *self, int, const char *name)
     {
         if (!GameManager::getGameVariable.isHooked())
             return GameManager::getGameVariable(self, name);
@@ -42,7 +42,7 @@ namespace gd::hooks
         return hook(self, name);
     }
 
-    void __fastcall GameManager_setGameVariable(GameManager *self, int, const char *name, bool value)
+    inline void __fastcall GameManager_setGameVariable(GameManager *self, int, const char *name, bool value)
     {
         if (!GameManager::setGameVariable.isHooked())
             return GameManager::setGameVariable(self, name, value);
