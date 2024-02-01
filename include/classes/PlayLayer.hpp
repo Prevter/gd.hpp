@@ -5,11 +5,11 @@
 
 #pragma once
 #include "../utils/class.hpp"
+#include "GameObject.hpp"
 
 namespace gd
 {
     class GJGameLevel;
-    class GameObject;
     class PlayerObject;
 
     class PlayLayer : public BindableClassBase

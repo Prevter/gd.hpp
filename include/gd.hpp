@@ -9,12 +9,15 @@
 #pragma once
 
 #include "classes/cocos/CCEGLView.hpp"
+#include "classes/cocos/CCPoint.hpp"
 #include "classes/AppDelegate.hpp"
 #include "classes/CCCircleWave.hpp"
 #include "classes/EditorPauseLayer.hpp"
 #include "classes/GameManager.hpp"
+#include "classes/GameObject.hpp"
 #include "classes/GameStatsManager.hpp"
 #include "classes/GJBaseGameLayer.hpp"
+#include "classes/GJGameLevel.hpp"
 #include "classes/LevelEditorLayer.hpp"
 #include "classes/MenuLayer.hpp"
 #include "classes/PlayLayer.hpp"
@@ -31,12 +34,6 @@ namespace gd
 
     /// @brief FMOD base address
     inline uintptr_t fmodBase;
-
-    template <typename R, typename S, typename... Args>
-    void initMethod(utils::BindableMethod<R, S, Args...> &method, const char *name, S hook);
-
-    template <typename R, typename S, typename... Args>
-    void initMethodSignature(utils::BindableMethod<R, S, Args...> &method, const char *name, S hook, uintptr_t base);
 
     /// @brief Initialize all hooks/addresses. Must be called
     /// before using any other function.

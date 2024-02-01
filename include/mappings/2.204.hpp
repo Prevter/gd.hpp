@@ -18,10 +18,26 @@ namespace gd::maps::v2_204
         {"GameManager::setGameVariable", 0x1284E0},
         {"GameManager::m_customFPSTarget", 0x384},
 
+        {"GameObject::m_objectID", 0x384},
+        {"GameObject::m_startPosition", 0x340},
+
         {"GameStatsManager::isItemUnlocked", 0x176570},
 
         {"GJBaseGameLayer::init", 0x190290},
         {"GJBaseGameLayer::handleButton", 0x1B69F0},
+
+        {"GJGameLevel::m_autoLevel", 0x30C},
+        {"GJGameLevel::m_demon", 0x2F0},
+        {"GJGameLevel::m_demonDifficulty", 0x2FC},
+        {"GJGameLevel::m_levelLength", 0x2D0},
+        {"GJGameLevel::m_stars", 0x300},
+        {"GJGameLevel::m_normalPercent", 0x2A0},
+        {"GJGameLevel::m_levelName", 0x118},
+        {"GJGameLevel::m_levelID", 0x10C},
+        {"GJGameLevel::m_objectCount", 0x224},
+        {"GJGameLevel::m_creatorName", 0x160},
+        {"GJGameLevel::m_difficulty", 0x210},
+        {"GJGameLevel::m_ratingsSum", 0x238},
 
         {"LevelEditorLayer::init", 0x239A70},
 
@@ -57,7 +73,8 @@ namespace gd::maps::v2_204
     };
 
     inline std::map<std::string, std::string> signatures = {
-        {"cocos2d::CCEGLView::swapBuffers", "?swapBuffers@CCEGLView@cocos2d@@UAEXXZ"},
         {"cocos2d::CCEGLView::pollEvents", "?pollEvents@CCEGLView@cocos2d@@QAEXXZ"},
+        {"cocos2d::CCEGLView::swapBuffers", "?swapBuffers@CCEGLView@cocos2d@@UAEXXZ"},
+        {"cocos2d::CCEGLView::toggleFullScreen", "?toggleFullScreen@CCEGLView@cocos2d@@QAEX_N0@Z"},
     };
 }

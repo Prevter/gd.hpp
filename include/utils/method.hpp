@@ -29,6 +29,14 @@ namespace gd::utils
         NOT_HOOKED
     };
 
+    enum class MethodType
+    {
+        THISCALL,
+        FASTCALL,
+        STDCALL,
+        CDECLCALL
+    };
+
     /// @brief Create hook
     /// @param target Target address
     /// @param hook Hook address
@@ -124,7 +132,20 @@ namespace gd::utils
         /// @return Return value of the original method
         R call(Args... args)
         {
-            return reinterpret_cast<R(__thiscall *)(Args...)>(m_currentAddress)(args...);
+            if (m_override)
+                return m_override(args...);
+
+            switch (m_type)
+            {
+            case MethodType::FASTCALL:
+                return reinterpret_cast<R(__fastcall *)(Args...)>(m_currentAddress)(args...);
+            case MethodType::STDCALL:
+                return reinterpret_cast<R(__stdcall *)(Args...)>(m_currentAddress)(args...);
+            case MethodType::CDECLCALL:
+                return reinterpret_cast<R(__cdecl *)(Args...)>(m_currentAddress)(args...);
+            default:
+                return reinterpret_cast<R(__thiscall *)(Args...)>(m_currentAddress)(args...);
+            }
         }
 
         /// @brief Call the original method
@@ -138,8 +159,8 @@ namespace gd::utils
         /// @brief Construct a new BindableMethod object
         /// @param address Address of the method
         /// @param hook Hook method
-        BindableMethod(uintptr_t address, S hook)
-            : m_originalAddress(address), m_hookedMethod(hook)
+        BindableMethod(uintptr_t address, S hook, MethodType type = MethodType::THISCALL, std::function<R(Args...)> override = nullptr)
+            : m_originalAddress(address), m_currentAddress(address), m_hookedMethod(hook), m_type(type), m_override(override)
         {
         }
 
@@ -151,5 +172,7 @@ namespace gd::utils
         bool m_hooked = false;
         std::function<R(Args...)> m_hook;
         S m_hookedMethod = nullptr;
+        std::function<R(Args...)> m_override;
+        MethodType m_type;
     };
 }
