@@ -86,6 +86,8 @@ namespace gd
                     reinterpret_cast<void(__thiscall *)(gd::cocos2d::CCEGLView *, int, bool)>(addr)(self, fullscreen, borderless);
                 });
         }
+        cocos2d::CCEGLView::init_m_fMouseX("cocos2d::CCEGLView::m_fMouseX");
+        cocos2d::CCEGLView::init_m_fMouseY("cocos2d::CCEGLView::m_fMouseY");
 
         // CCDirector
         initMethodSignature(cocos2d::CCDirector::sharedDirector, "cocos2d::CCDirector::sharedDirector", &hooks::CCDirector_sharedDirector, cocosBase, gd::utils::MethodType::CDECLCALL);

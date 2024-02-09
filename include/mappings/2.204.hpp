@@ -6,6 +6,11 @@
 namespace gd::maps::v2_204
 {
     inline std::map<std::string, uintptr_t> addresses = {
+        {"cocos2d::CCEGLView::m_fMouseX", 0xBC},
+        {"cocos2d::CCEGLView::m_fMouseY", 0xC0},
+
+        {"cocos2d::CCTexture2D::m_uName", 0x44},
+
         {"AppDelegate::applicationWillEnterForeground", 0x5B530},
         {"AppDelegate::applicationDidFinishLaunching", 0x5B320},
         {"AppDelegate::applicationDidEnterBackground", 0x5B4F0},
@@ -87,7 +92,7 @@ namespace gd::maps::v2_204
         {"cocos2d::CCEGLView::swapBuffers", "?swapBuffers@CCEGLView@cocos2d@@UAEXXZ"},
         {"cocos2d::CCEGLView::toggleFullScreen", "?toggleFullScreen@CCEGLView@cocos2d@@QAEX_N0@Z"},
         {"cocos2d::CCEGLView::getFrameSize", "?toggleFullScreen@CCEGLView@cocos2d@@QAEX_N0@Z"},
-        
+
         {"cocos2d::ccGLBlendFunc", "?ccGLBlendFunc@cocos2d@@YAXII@Z"},
         {"cocos2d::ccGLBindTexture2D", "?ccGLBindTexture2D@cocos2d@@YAXI@Z"},
 
@@ -96,7 +101,7 @@ namespace gd::maps::v2_204
 
         {"cocos2d::CCShaderCache::sharedShaderCache", "?sharedShaderCache@CCShaderCache@cocos2d@@SAPAV12@XZ"},
         {"cocos2d::CCShaderCache::programForKey", "?programForKey@CCShaderCache@cocos2d@@QAEPAVCCGLProgram@2@PBD@Z"},
-        
+
         {"cocos2d::CCTexture2D::constructor", "??0CCTexture2D@cocos2d@@QAE@XZ"},
         {"cocos2d::CCTexture2D::initWithData", "?initWithData@CCTexture2D@cocos2d@@QAE_NPBXW4CCTexture2DPixelFormat@2@IIABVCCSize@2@@Z"},
     };
