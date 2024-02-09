@@ -3,13 +3,16 @@
 // Main header file for the library.
 // This file should be included by the user.
 // ~~~~~~~~~~~~~~~~
-
-#ifndef GD_HPP
-#define GD_HPP
 #pragma once
 
+#include "classes/cocos/CCDirector.hpp"
+#include "classes/cocos/CCEGLProgram.hpp"
 #include "classes/cocos/CCEGLView.hpp"
-#include "classes/cocos/CCPoint.hpp"
+#include "classes/cocos/CCEGLViewProtocol.hpp"
+#include "classes/cocos/CCGeometry.hpp"
+#include "classes/cocos/CCShaderCache.hpp"
+#include "classes/cocos/Global.hpp"
+
 #include "classes/AppDelegate.hpp"
 #include "classes/CCCircleWave.hpp"
 #include "classes/EditorPauseLayer.hpp"
@@ -49,5 +52,3 @@ namespace gd
         utils::RemoveHook = removeHook;
     }
 }
-
-#endif // GD_HPP

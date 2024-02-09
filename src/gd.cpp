@@ -1,6 +1,17 @@
 #include <gd.hpp>
 #include <utils/versions.hpp>
 
+#define FIND_METHOD_SIGNATURE(name, hook, signature)                                    \
+    if (maps::signatures.find(#name) == maps::signatures.end())                         \
+    {                                                                                   \
+        throw std::runtime_error("Failed to find signature for " + std::string(#name)); \
+    }                                                                                   \
+    uintptr_t address = utils::findExport(base, maps::signatures[#name]);               \
+    if (!address)                                                                       \
+    {                                                                                   \
+        throw std::runtime_error("Failed to find address for " + std::string(#name));   \
+    }
+
 namespace gd
 {
     template <typename R, typename S, typename... Args>
@@ -9,9 +20,10 @@ namespace gd
         if (maps::addresses.find(name) == maps::addresses.end())
         {
             printf("[gd.hpp] Failed to find address for %s\n", name);
+            throw std::runtime_error("Failed to find address for " + std::string(name));
         }
 
-        method = utils::BindableMethod<R, S, Args...>(base + gd::maps::addresses[name], hook, type);
+        method.initialize(base + maps::addresses[name], hook, type, nullptr);
     }
 
     template <typename R, typename S, typename... Args>
@@ -24,20 +36,22 @@ namespace gd
         if (maps::signatures.find(name) == maps::signatures.end())
         {
             printf("[gd.hpp] Failed to find signature for %s\n", name);
+            throw std::runtime_error("Failed to find signature for " + std::string(name));
         }
-
-        auto address = utils::findExport(base, maps::signatures[name]);
-
+        uintptr_t address = utils::findExport(base, maps::signatures[name]);
         if (!address)
         {
             printf("[gd.hpp] Failed to find address for %s\n", name);
+            throw std::runtime_error("Failed to find address for " + std::string(name));
         }
-
-        method = utils::BindableMethod<R, S, Args...>(address, hook, type, override);
+        method.initialize(address, hook, type, override);
     }
 
     void init()
     {
+        FILE *stream;
+        freopen_s(&stream, "CONOUT$", "w", stdout);
+
         base = reinterpret_cast<uintptr_t>(GetModuleHandleA(nullptr));
         cocosBase = reinterpret_cast<uintptr_t>(GetModuleHandleA("libcocos2d.dll"));
         fmodBase = reinterpret_cast<uintptr_t>(GetModuleHandleA("fmod.dll"));
@@ -47,6 +61,10 @@ namespace gd
         gd::maps::init();
 
         /// cocos2d-x
+        // Global namespace
+        initMethodSignature(cocos2d::ccGLBlendFunc, "cocos2d::ccGLBlendFunc", &hooks::ccGLBlendFunc, cocosBase, gd::utils::MethodType::CDECLCALL);
+        initMethodSignature(cocos2d::ccGLBindTexture2D, "cocos2d::ccGLBindTexture2D", &hooks::ccGLBindTexture2D, cocosBase, gd::utils::MethodType::CDECLCALL);
+
         // CCEGLView
         initMethodSignature(cocos2d::CCEGLView::swapBuffers, "cocos2d::CCEGLView::swapBuffers", &hooks::CCEGLView_swapBuffers, cocosBase);
         initMethodSignature(cocos2d::CCEGLView::pollEvents, "cocos2d::CCEGLView::pollEvents", &hooks::CCEGLView_pollEvents, cocosBase);
@@ -56,17 +74,27 @@ namespace gd
         }
         else
         {
-            initMethodSignature<void, void(__fastcall *)(cocos2d::CCEGLView *, int, bool, bool), cocos2d::CCEGLView *, bool, bool>(
+            FIND_METHOD_SIGNATURE(
                 cocos2d::CCEGLView::toggleFullScreen,
-                "cocos2d::CCEGLView::toggleFullScreen",
-                reinterpret_cast<void(__fastcall *)(cocos2d::CCEGLView *, int, bool, bool)>(&hooks::CCEGLView_toggleFullScreen_old),
-                cocosBase, gd::utils::MethodType::THISCALL,
-                [](cocos2d::CCEGLView *self, bool fullscreen, bool borderless) -> void
+                &hooks::CCEGLView_toggleFullScreen_old,
+                void(__thiscall *)(gd::cocos2d::CCEGLView *, int, bool, bool));
+
+            cocos2d::CCEGLView::toggleFullScreen.initialize(
+                address,
+                reinterpret_cast<void(__fastcall *)(gd::cocos2d::CCEGLView *, int, bool, bool)>(&hooks::CCEGLView_toggleFullScreen_old),
+                gd::utils::MethodType::THISCALL,
+                [](cocos2d::CCEGLView *self, int fullscreen, bool borderless) -> void
                 {
                     auto addr = gd::cocos2d::CCEGLView::toggleFullScreen.getCurrentAddress();
-                    reinterpret_cast<void(__thiscall *)(gd::cocos2d::CCEGLView *, bool)>(addr)(self, fullscreen);
+                    reinterpret_cast<void(__thiscall *)(gd::cocos2d::CCEGLView *, int, bool)>(addr)(self, fullscreen, borderless);
                 });
         }
+
+        // CCDirector
+        initMethodSignature(cocos2d::CCDirector::sharedDirector, "cocos2d::CCDirector::sharedDirector", &hooks::CCDirector_sharedDirector, cocosBase, gd::utils::MethodType::CDECLCALL);
+        initMethodSignature(cocos2d::CCDirector::getWinSize, "cocos2d::CCDirector::getWinSize", &hooks::CCDirector_getWinSize, cocosBase);
+        initMethodSignature(cocos2d::CCDirector::getOpenGLView, "cocos2d::CCDirector::getOpenGLView", &hooks::CCDirector_getOpenGLView, cocosBase);
+        initMethodSignature(cocos2d::CCDirector::getDeltaTime, "cocos2d::CCDirector::getDeltaTime", &hooks::CCDirector_getDeltaTime, cocosBase);
 
         /// Geometry Dash
         // AppDelegate
@@ -80,7 +108,7 @@ namespace gd
         initMethod(EditorPauseLayer::onExitEditor, "EditorPauseLayer::onExitEditor", &hooks::EditorPauseLayer_onExitEditor);
 
         // GameManager
-        initMethod(GameManager::sharedState, "GameManager::sharedState", &hooks::GameManager_sharedState);
+        initMethod(GameManager::sharedState, "GameManager::sharedState", &hooks::GameManager_sharedState, gd::utils::MethodType::STDCALL);
         initMethod(GameManager::getGameVariable, "GameManager::getGameVariable", &hooks::GameManager_getGameVariable);
         initMethod(GameManager::setGameVariable, "GameManager::setGameVariable", &hooks::GameManager_setGameVariable);
         GameManager::init_m_customFPSTarget("GameManager::m_customFPSTarget");

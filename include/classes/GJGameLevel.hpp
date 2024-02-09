@@ -5,7 +5,7 @@
 
 #pragma once
 #include "../utils/class.hpp"
-#include "cocos/CCPoint.hpp"
+#include "cocos/CCGeometry.hpp"
 #include "../types/SeedValue.hpp"
 #include <string>
 
@@ -43,7 +43,7 @@ namespace gd
         Platformer
     };
 
-    class GJGameLevel : public BindableClassBase
+    class GJGameLevel
     {
         INIT_MEMBER(bool, m_autoLevel)
         INIT_MEMBER(bool, m_demon)

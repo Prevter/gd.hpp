@@ -8,10 +8,10 @@
 
 namespace gd
 {
-    class MenuLayer : public BindableClassBase
+    class MenuLayer
     {
     public:
-        inline static utils::BindableMethod<bool, bool(__fastcall *)(MenuLayer *), MenuLayer *> init;
+        INIT_METHOD(MenuLayer, init, bool, bool(__fastcall *)(MenuLayer *), MenuLayer *);
     };
 }
 

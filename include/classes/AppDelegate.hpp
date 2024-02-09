@@ -8,15 +8,15 @@
 
 namespace gd
 {
-    class AppDelegate : public BindableClassBase
+    class AppDelegate
     {
     public:
-        inline static utils::BindableMethod<void, void(__fastcall *)(AppDelegate *), AppDelegate *> applicationWillEnterForeground;
-        inline static utils::BindableMethod<bool, bool(__fastcall *)(AppDelegate *), AppDelegate *> applicationDidFinishLaunching;
-        inline static utils::BindableMethod<void, void(__fastcall *)(AppDelegate *), AppDelegate *> applicationDidEnterBackground;
-        inline static utils::BindableMethod<void, void(__fastcall *)(AppDelegate *), AppDelegate *> applicationWillBecomeActive;
-        inline static utils::BindableMethod<void, void(__fastcall *)(AppDelegate *), AppDelegate *> applicationWillResignActive;
-        inline static utils::BindableMethod<void, void(__fastcall *)(AppDelegate *, int, bool), AppDelegate *, bool> trySaveGame;
+        INIT_METHOD(AppDelegate, applicationWillEnterForeground, void, void(__fastcall *)(AppDelegate *), AppDelegate *);
+        INIT_METHOD(AppDelegate, applicationDidFinishLaunching, bool, bool(__fastcall *)(AppDelegate *), AppDelegate *);
+        INIT_METHOD(AppDelegate, applicationDidEnterBackground, void, void(__fastcall *)(AppDelegate *), AppDelegate *);
+        INIT_METHOD(AppDelegate, applicationWillBecomeActive, void, void(__fastcall *)(AppDelegate *), AppDelegate *);
+        INIT_METHOD(AppDelegate, applicationWillResignActive, void, void(__fastcall *)(AppDelegate *), AppDelegate *);
+        INIT_METHOD(AppDelegate, trySaveGame, void, void(__fastcall *)(AppDelegate *, int, bool), AppDelegate *, bool);
     };
 }
 
@@ -31,7 +31,7 @@ namespace gd::hooks
         return hook(self);
     }
 
-    inline bool __fastcall AppDelegate_applicationWillDidFinishLaunching(AppDelegate *self)
+    inline bool __fastcall AppDelegate_applicationDidFinishLaunching(AppDelegate *self)
     {
         if (!AppDelegate::applicationDidFinishLaunching.isHooked())
             return AppDelegate::applicationDidFinishLaunching(self);

@@ -12,24 +12,24 @@ namespace gd
     class GJGameLevel;
     class PlayerObject;
 
-    class PlayLayer : public BindableClassBase
+    class PlayLayer
     {
     public:
-        inline static utils::BindableMethod<bool, bool(__fastcall *)(PlayLayer *, int, GJGameLevel *, bool, bool), PlayLayer *, GJGameLevel *, bool, bool> init;
-        inline static utils::BindableMethod<void, void(__fastcall *)(PlayLayer *, int, float), PlayLayer *, float> update;
-        inline static utils::BindableMethod<void, void(__fastcall *)(PlayLayer *), PlayLayer *> destructor;
-        inline static utils::BindableMethod<void, void(__fastcall *)(PlayLayer *), PlayLayer *> resetLevel;
+        INIT_METHOD(PlayLayer, init, bool, bool(__fastcall *)(PlayLayer *, int, GJGameLevel *, bool, bool), PlayLayer *, GJGameLevel *, bool, bool);
+        INIT_METHOD(PlayLayer, update, void, void(__fastcall *)(PlayLayer *, int, float), PlayLayer *, float);
+        INIT_METHOD(PlayLayer, destructor, void, void(__fastcall *)(PlayLayer *), PlayLayer *);
+        INIT_METHOD(PlayLayer, resetLevel, void, void(__fastcall *)(PlayLayer *), PlayLayer *);
         // levelComplete
-        inline static utils::BindableMethod<int, int(__fastcall *)(PlayLayer *), PlayLayer *> onQuit;
+        INIT_METHOD(PlayLayer, onQuit, int, int(__fastcall *)(PlayLayer *), PlayLayer *);
         // destroyPlayer
-        inline static utils::BindableMethod<void, void(__fastcall *)(PlayLayer *, int, GameObject *), PlayLayer *, GameObject *> addObject;
-        inline static utils::BindableMethod<void, void(__fastcall *)(PlayLayer *, int, GameObject *), PlayLayer *, GameObject *> destroyObject;
-        inline static utils::BindableMethod<void, void(__fastcall *)(PlayLayer *, int, GameObject *), PlayLayer *, GameObject *> pickupCoin;
-        inline static utils::BindableMethod<void, void(__fastcall *)(PlayLayer *, int, GameObject *), PlayLayer *, GameObject *> setStartPosObject;
-        inline static utils::BindableMethod<void, void(__fastcall *)(PlayLayer *), PlayLayer *> startMusic;
-        inline static utils::BindableMethod<void, void(__fastcall *)(PlayLayer *), PlayLayer *> resetLevelFromStart;
+        INIT_METHOD(PlayLayer, addObject, void, void(__fastcall *)(PlayLayer *, int, GameObject *), PlayLayer *, GameObject *);
+        INIT_METHOD(PlayLayer, destroyObject, void, void(__fastcall *)(PlayLayer *, int, GameObject *), PlayLayer *, GameObject *);
+        INIT_METHOD(PlayLayer, pickupCoin, void, void(__fastcall *)(PlayLayer *, int, GameObject *), PlayLayer *, GameObject *);
+        INIT_METHOD(PlayLayer, setStartPosObject, void, void(__fastcall *)(PlayLayer *, int, GameObject *), PlayLayer *, GameObject *);
+        INIT_METHOD(PlayLayer, startMusic, void, void(__fastcall *)(PlayLayer *), PlayLayer *);
+        INIT_METHOD(PlayLayer, resetLevelFromStart, void, void(__fastcall *)(PlayLayer *), PlayLayer *);
         // markCheckpoint
-        inline static utils::BindableMethod<void, void(__fastcall *)(PlayLayer *, int, bool), PlayLayer *, bool> togglePracticeMode;
+        INIT_METHOD(PlayLayer, togglePracticeMode, void, void(__fastcall *)(PlayLayer *, int, bool), PlayLayer *, bool);
 
         INIT_MEMBER(bool, m_isPracticeMode)
         INIT_MEMBER(void *, m_startPosCheckpoint)

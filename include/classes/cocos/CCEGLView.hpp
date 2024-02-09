@@ -5,15 +5,25 @@
 
 #pragma once
 #include "../../utils/class.hpp"
+#include "CCEGLViewProtocol.hpp"
+
+#ifndef INIT_METHOD
+#error INIT_METHOD is not defined
+#endif
 
 namespace gd::cocos2d
 {
-    class CCEGLView : public gd::BindableClassBase
+    class CCEGLView : public CCEGLViewProtocol
     {
     public:
-        inline static gd::utils::BindableMethod<void, void(__fastcall *)(CCEGLView *), CCEGLView *> pollEvents;
-        inline static gd::utils::BindableMethod<void, void(__fastcall *)(CCEGLView *), CCEGLView *> swapBuffers;
-        inline static gd::utils::BindableMethod<void, void(__fastcall *)(CCEGLView *, int, bool, bool), CCEGLView *, bool, bool> toggleFullScreen;
+        INIT_METHOD(cocos2d::CCEGLView, pollEvents, void, void(__fastcall *)(CCEGLView *), CCEGLView *);
+        INIT_METHOD(cocos2d::CCEGLView, swapBuffers, void, void(__fastcall *)(CCEGLView *), CCEGLView *);
+        INIT_METHOD(cocos2d::CCEGLView, toggleFullScreen, void, void(__fastcall *)(CCEGLView *, int, bool, bool), CCEGLView *, bool, bool);
+
+        INIT_MEMBER(float, m_fMouseX);
+        INIT_MEMBER(float, m_fMouseY);
+
+        inline CCPoint getMousePosition() { return {m_fMouseX(), m_fMouseY()}; }
     };
 }
 

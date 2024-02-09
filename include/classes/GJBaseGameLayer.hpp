@@ -8,11 +8,11 @@
 
 namespace gd
 {
-    class GJBaseGameLayer : public BindableClassBase
+    class GJBaseGameLayer
     {
     public:
-        inline static utils::BindableMethod<bool, bool(__fastcall *)(GJBaseGameLayer *), GJBaseGameLayer *> init;
-        inline static utils::BindableMethod<void, void(__fastcall *)(GJBaseGameLayer *, int, bool, int, bool), GJBaseGameLayer *, bool, int, bool> handleButton;
+        INIT_METHOD(GJBaseGameLayer, init, bool, bool(__fastcall *)(GJBaseGameLayer *), GJBaseGameLayer *);
+        INIT_METHOD(GJBaseGameLayer, handleButton, void, void(__fastcall *)(GJBaseGameLayer *, int, bool, int, bool), GJBaseGameLayer *, bool, int, bool);
     };
 }
 

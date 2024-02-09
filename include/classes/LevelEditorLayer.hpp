@@ -10,10 +10,10 @@ namespace gd
 {
     class GJGameLevel;
 
-    class LevelEditorLayer : public BindableClassBase
+    class LevelEditorLayer
     {
     public:
-        inline static utils::BindableMethod<bool, bool(__fastcall *)(LevelEditorLayer *, int, GJGameLevel *, bool), LevelEditorLayer *, GJGameLevel *, bool> init;
+        INIT_METHOD(LevelEditorLayer, init, bool, bool(__fastcall *)(LevelEditorLayer *, int, GJGameLevel *, bool), LevelEditorLayer *, GJGameLevel *, bool);
     };
 }
 

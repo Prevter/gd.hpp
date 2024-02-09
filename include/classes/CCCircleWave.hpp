@@ -8,11 +8,11 @@
 
 namespace gd
 {
-    class CCCircleWave : public BindableClassBase
+    class CCCircleWave
     {
     public:
-        inline static utils::BindableMethod<bool, bool(__fastcall *)(CCCircleWave *, int, float, float, float, bool, bool), CCCircleWave *, float, float, float, bool, bool> init;
-        inline static utils::BindableMethod<void, void(__fastcall *)(CCCircleWave *), CCCircleWave *> draw;
+        INIT_METHOD(CCCircleWave, init, bool, bool(__fastcall *)(CCCircleWave *, int, float, float, float, bool, bool), CCCircleWave *, float, float, float, bool, bool);
+        INIT_METHOD(CCCircleWave, draw, void, void(__fastcall *)(CCCircleWave *), CCCircleWave *);
     };
 }
 

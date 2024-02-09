@@ -13,10 +13,10 @@ namespace gd
         class CCObject;
     }
 
-    class EditorPauseLayer : public BindableClassBase
+    class EditorPauseLayer
     {
     public:
-        inline static utils::BindableMethod<bool, bool(__fastcall *)(EditorPauseLayer *, int, cocos2d::CCObject*), EditorPauseLayer *, cocos2d::CCObject*> onExitEditor;
+        INIT_METHOD(EditorPauseLayer, onExitEditor, bool, bool(__fastcall *)(EditorPauseLayer *, int, cocos2d::CCObject*), EditorPauseLayer *, cocos2d::CCObject*);
     };
 }
 

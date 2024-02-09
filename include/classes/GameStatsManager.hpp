@@ -8,10 +8,10 @@
 
 namespace gd
 {
-    class GameStatsManager : public BindableClassBase
+    class GameStatsManager
     {
     public:
-        inline static utils::BindableMethod<bool, bool(__fastcall *)(GameStatsManager *, int, int, int), GameStatsManager *, int, int> isItemUnlocked;
+        INIT_METHOD(GameStatsManager, isItemUnlocked, bool, bool(__fastcall *)(GameStatsManager *, int, int, int), GameStatsManager *, int, int);
     };
 }
 

@@ -8,12 +8,12 @@
 
 namespace gd
 {
-    class GameManager : public BindableClassBase
+    class GameManager
     {
     public:
-        inline static utils::BindableMethod<GameManager *, GameManager *(__stdcall *)()> sharedState;
-        inline static utils::BindableMethod<bool, bool(__fastcall *)(GameManager *, int, const char *), GameManager *, const char *> getGameVariable;
-        inline static utils::BindableMethod<void, void(__fastcall *)(GameManager *, int, const char *, bool), GameManager *, const char *, bool> setGameVariable;
+        INIT_METHOD(GameManager, sharedState, GameManager *, GameManager *(__stdcall *)());
+        INIT_METHOD(GameManager, getGameVariable, bool, bool(__fastcall *)(GameManager *, int, const char *), GameManager *, const char *);
+        INIT_METHOD(GameManager, setGameVariable, void, void(__fastcall *)(GameManager *, int, const char *, bool), GameManager *, const char *, bool);
 
         INIT_MEMBER(float, m_customFPSTarget)
 

@@ -10,7 +10,7 @@ project(
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-file(GLOB_RECURSE GD_HPP_SOURCES "src/*.cpp")
+file(GLOB_RECURSE GD_HPP_SOURCES "src/*.cpp" "include/*.hpp")
 
 add_library(gd.hpp STATIC ${GD_HPP_SOURCES})
 
