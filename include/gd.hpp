@@ -6,11 +6,12 @@
 #pragma once
 
 #include "classes/cocos/CCDirector.hpp"
-#include "classes/cocos/CCEGLProgram.hpp"
 #include "classes/cocos/CCEGLView.hpp"
 #include "classes/cocos/CCEGLViewProtocol.hpp"
 #include "classes/cocos/CCGeometry.hpp"
+#include "classes/cocos/CCGLProgram.hpp"
 #include "classes/cocos/CCShaderCache.hpp"
+#include "classes/cocos/CCTexture2D.hpp"
 #include "classes/cocos/Global.hpp"
 
 #include "classes/AppDelegate.hpp"

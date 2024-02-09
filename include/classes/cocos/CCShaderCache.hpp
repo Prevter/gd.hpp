@@ -5,7 +5,7 @@
 
 #pragma once
 #include "../../utils/class.hpp"
-#include "CCEGLProgram.hpp"
+#include "CCGLProgram.hpp"
 
 #define kCCShader_PositionTextureColor "ShaderPositionTextureColor"
 #define kCCShader_PositionTextureColorAlphaTest "ShaderPositionTextureColorAlphaTest"
@@ -17,17 +17,16 @@
 #define kCCShader_PositionLengthTexureColor "ShaderPositionLengthTextureColor"
 #define kCCShader_ControlSwitch "Shader_ControlSwitch"
 
-#ifndef INIT_METHOD
-#error INIT_METHOD is not defined
-#endif
-
 namespace gd::cocos2d
 {
     class CCShaderCache
     {
     public:
-        INIT_METHOD(cocos2d::CCShaderCache, sharedShaderCache, CCShaderCache *, void(__stdcall *)());
-        INIT_METHOD(cocos2d::CCShaderCache, programForKey, CCEGLProgram *, void(__thiscall *)(CCShaderCache *, int, const char *), CCShaderCache *, const char *);
+        INIT_METHOD(cocos2d::CCShaderCache, sharedShaderCache, CCShaderCache *, CCShaderCache *(__stdcall *)());
+        INIT_METHOD(cocos2d::CCShaderCache, programForKey, CCGLProgram *, CCGLProgram *(__fastcall *)(CCShaderCache *, int, const char *), CCShaderCache *, const char *);
+
+    private:
+        friend void init();
     };
 }
 
@@ -42,7 +41,7 @@ namespace gd::hooks
         return hook();
     }
 
-    inline gd::cocos2d::CCEGLProgram *__fastcall CCShaderCache_programForKey(gd::cocos2d::CCShaderCache *self, int, const char *shader)
+    inline gd::cocos2d::CCGLProgram *__fastcall CCShaderCache_programForKey(gd::cocos2d::CCShaderCache *self, int, const char *shader)
     {
         if (!gd::cocos2d::CCShaderCache::programForKey.isHooked())
             return gd::cocos2d::CCShaderCache::programForKey(self, shader);

@@ -7,10 +7,6 @@
 #include "../../utils/class.hpp"
 #include "CCEGLViewProtocol.hpp"
 
-#ifndef INIT_METHOD
-#error INIT_METHOD is not defined
-#endif
-
 namespace gd::cocos2d
 {
     class CCEGLView : public CCEGLViewProtocol

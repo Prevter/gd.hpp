@@ -90,5 +90,14 @@ namespace gd::maps::v2_204
         
         {"cocos2d::ccGLBlendFunc", "?ccGLBlendFunc@cocos2d@@YAXII@Z"},
         {"cocos2d::ccGLBindTexture2D", "?ccGLBindTexture2D@cocos2d@@YAXI@Z"},
+
+        {"cocos2d::CCGLProgram::use", "?use@CCGLProgram@cocos2d@@QAEXXZ"},
+        {"cocos2d::CCGLProgram::setUniformsForBuiltins", "?setUniformsForBuiltins@CCGLProgram@cocos2d@@QAEXXZ"},
+
+        {"cocos2d::CCShaderCache::sharedShaderCache", "?sharedShaderCache@CCShaderCache@cocos2d@@SAPAV12@XZ"},
+        {"cocos2d::CCShaderCache::programForKey", "?programForKey@CCShaderCache@cocos2d@@QAEPAVCCGLProgram@2@PBD@Z"},
+        
+        {"cocos2d::CCTexture2D::constructor", "??0CCTexture2D@cocos2d@@QAE@XZ"},
+        {"cocos2d::CCTexture2D::initWithData", "?initWithData@CCTexture2D@cocos2d@@QAE_NPBXW4CCTexture2DPixelFormat@2@IIABVCCSize@2@@Z"},
     };
 }

@@ -19,7 +19,6 @@ namespace gd
     {
         if (maps::addresses.find(name) == maps::addresses.end())
         {
-            printf("[gd.hpp] Failed to find address for %s\n", name);
             throw std::runtime_error("Failed to find address for " + std::string(name));
         }
 
@@ -35,13 +34,11 @@ namespace gd
     {
         if (maps::signatures.find(name) == maps::signatures.end())
         {
-            printf("[gd.hpp] Failed to find signature for %s\n", name);
             throw std::runtime_error("Failed to find signature for " + std::string(name));
         }
         uintptr_t address = utils::findExport(base, maps::signatures[name]);
         if (!address)
         {
-            printf("[gd.hpp] Failed to find address for %s\n", name);
             throw std::runtime_error("Failed to find address for " + std::string(name));
         }
         method.initialize(address, hook, type, override);
@@ -95,6 +92,19 @@ namespace gd
         initMethodSignature(cocos2d::CCDirector::getWinSize, "cocos2d::CCDirector::getWinSize", &hooks::CCDirector_getWinSize, cocosBase);
         initMethodSignature(cocos2d::CCDirector::getOpenGLView, "cocos2d::CCDirector::getOpenGLView", &hooks::CCDirector_getOpenGLView, cocosBase);
         initMethodSignature(cocos2d::CCDirector::getDeltaTime, "cocos2d::CCDirector::getDeltaTime", &hooks::CCDirector_getDeltaTime, cocosBase);
+
+        // CCGLProgram
+        initMethodSignature(cocos2d::CCGLProgram::use, "cocos2d::CCGLProgram::use", &hooks::CCGLProgram_use, cocosBase);
+        initMethodSignature(cocos2d::CCGLProgram::setUniformsForBuiltins, "cocos2d::CCGLProgram::setUniformsForBuiltins", &hooks::CCGLProgram_setUniformsForBuiltins, cocosBase);
+
+        // CCShaderCache
+        initMethodSignature(cocos2d::CCShaderCache::sharedShaderCache, "cocos2d::CCShaderCache::sharedShaderCache", &hooks::CCShaderCache_sharedShaderCache, cocosBase, gd::utils::MethodType::CDECLCALL);
+        initMethodSignature(cocos2d::CCShaderCache::programForKey, "cocos2d::CCShaderCache::programForKey", &hooks::CCShaderCache_programForKey, cocosBase);
+
+        // CCTexture2D
+        initMethodSignature(cocos2d::CCTexture2D::constructor, "cocos2d::CCTexture2D::constructor", &hooks::CCTexture2D_constructor, cocosBase);
+        initMethodSignature(cocos2d::CCTexture2D::initWithData, "cocos2d::CCTexture2D::initWithData", &hooks::CCTexture2D_initWithData, cocosBase);
+        cocos2d::CCTexture2D::init_m_uName("cocos2d::CCTexture2D::m_uName");
 
         /// Geometry Dash
         // AppDelegate

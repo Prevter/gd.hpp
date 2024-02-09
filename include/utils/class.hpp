@@ -6,16 +6,16 @@
 #define INIT_MEMBER(type, member)                                                                \
 private:                                                                                         \
     inline static utils::BindableMember<type> member##_bind;                                     \
+                                                                                                 \
+public:                                                                                          \
+    inline type member() { return member##_bind.get(reinterpret_cast<void *>(this)); }           \
+    inline void member(type value) { member##_bind.set(reinterpret_cast<void *>(this), value); } \
     inline static void init_##member(const char *name)                                           \
     {                                                                                            \
         if (gd::maps::addresses.find(name) == gd::maps::addresses.end())                         \
             return;                                                                              \
         member##_bind = utils::BindableMember<type>(gd::maps::addresses[name]);                  \
     }                                                                                            \
-                                                                                                 \
-public:                                                                                          \
-    inline type member() { return member##_bind.get(reinterpret_cast<void *>(this)); }           \
-    inline void member(type value) { member##_bind.set(reinterpret_cast<void *>(this), value); } \
     inline type *member##_ptr() { return member##_bind.getPointer(reinterpret_cast<void *>(this)); }
 
 #define INIT_METHOD(class, name, ...) \
