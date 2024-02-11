@@ -15,6 +15,7 @@ namespace gd::cocos2d
         INIT_METHOD(cocos2d::CCEGLView, pollEvents, void, void(__fastcall *)(CCEGLView *), CCEGLView *);
         INIT_METHOD(cocos2d::CCEGLView, swapBuffers, void, void(__fastcall *)(CCEGLView *), CCEGLView *);
         INIT_METHOD(cocos2d::CCEGLView, toggleFullScreen, void, void(__fastcall *)(CCEGLView *, int, bool, bool), CCEGLView *, bool, bool);
+        INIT_METHOD(cocos2d::CCEGLView, getWindow, void*, void*(__fastcall *)(CCEGLView *), CCEGLView *);
 
         INIT_MEMBER(float, m_fMouseX);
         INIT_MEMBER(float, m_fMouseY);
@@ -59,5 +60,14 @@ namespace gd::hooks
 
         auto hook = gd::cocos2d::CCEGLView::toggleFullScreen.getHook();
         return hook(self, fullscreen, borderless);
+    }
+
+    inline void* __fastcall CCEGLView_getWindow(cocos2d::CCEGLView *self)
+    {
+        if (!gd::cocos2d::CCEGLView::getWindow.isHooked())
+            return gd::cocos2d::CCEGLView::getWindow(self);
+
+        auto hook = gd::cocos2d::CCEGLView::getWindow.getHook();
+        return hook(self);
     }
 }

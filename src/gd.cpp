@@ -86,6 +86,7 @@ namespace gd
                     reinterpret_cast<void(__thiscall *)(gd::cocos2d::CCEGLView *, int, bool)>(addr)(self, fullscreen, borderless);
                 });
         }
+        initMethodSignature(cocos2d::CCEGLView::getWindow, "cocos2d::CCEGLView::getWindow", &hooks::CCEGLView_getWindow, cocosBase);
         cocos2d::CCEGLView::init_m_fMouseX("cocos2d::CCEGLView::m_fMouseX");
         cocos2d::CCEGLView::init_m_fMouseY("cocos2d::CCEGLView::m_fMouseY");
 
