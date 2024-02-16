@@ -87,6 +87,8 @@ namespace gd
                 });
         }
         initMethodSignature(cocos2d::CCEGLView::getWindow, "cocos2d::CCEGLView::getWindow", &hooks::CCEGLView_getWindow, cocosBase);
+        initMethodSignature(cocos2d::CCEGLView::sharedOpenGLView, "cocos2d::CCEGLView::sharedOpenGLView", &hooks::CCEGLView_sharedOpenGLView, cocosBase, gd::utils::MethodType::CDECLCALL);
+        initMethodSignature(cocos2d::CCEGLView::showCursor, "cocos2d::CCEGLView::showCursor", &hooks::CCEGLView_showCursor, cocosBase);
         cocos2d::CCEGLView::init_m_fMouseX("cocos2d::CCEGLView::m_fMouseX");
         cocos2d::CCEGLView::init_m_fMouseY("cocos2d::CCEGLView::m_fMouseY");
 

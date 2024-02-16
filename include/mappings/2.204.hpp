@@ -93,6 +93,8 @@ namespace gd::maps::v2_204
         {"cocos2d::CCEGLView::toggleFullScreen", "?toggleFullScreen@CCEGLView@cocos2d@@QAEX_N0@Z"},
         {"cocos2d::CCEGLView::getFrameSize", "?toggleFullScreen@CCEGLView@cocos2d@@QAEX_N0@Z"},
         {"cocos2d::CCEGLView::getWindow", "?getWindow@CCEGLView@cocos2d@@QBEPAUGLFWwindow@@XZ"},
+        {"cocos2d::CCEGLView::sharedOpenGLView", "?sharedOpenGLView@CCEGLView@cocos2d@@SAPAV12@XZ"},
+        {"cocos2d::CCEGLView::showCursor", "?showCursor@CCEGLView@cocos2d@@QAEX_N@Z"},
 
         {"cocos2d::ccGLBlendFunc", "?ccGLBlendFunc@cocos2d@@YAXII@Z"},
         {"cocos2d::ccGLBindTexture2D", "?ccGLBindTexture2D@cocos2d@@YAXI@Z"},

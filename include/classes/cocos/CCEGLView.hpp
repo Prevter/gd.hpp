@@ -16,6 +16,8 @@ namespace gd::cocos2d
         INIT_METHOD(cocos2d::CCEGLView, swapBuffers, void, void(__fastcall *)(CCEGLView *), CCEGLView *);
         INIT_METHOD(cocos2d::CCEGLView, toggleFullScreen, void, void(__fastcall *)(CCEGLView *, int, bool, bool), CCEGLView *, bool, bool);
         INIT_METHOD(cocos2d::CCEGLView, getWindow, void*, void*(__fastcall *)(CCEGLView *), CCEGLView *);
+        INIT_METHOD(cocos2d::CCEGLView, sharedOpenGLView, CCEGLView*, CCEGLView*(__cdecl *)());
+        INIT_METHOD(cocos2d::CCEGLView, showCursor, void, void(__fastcall *)(CCEGLView *, int, bool), CCEGLView *, bool);
 
         INIT_MEMBER(float, m_fMouseX);
         INIT_MEMBER(float, m_fMouseY);
@@ -69,5 +71,23 @@ namespace gd::hooks
 
         auto hook = gd::cocos2d::CCEGLView::getWindow.getHook();
         return hook(self);
+    }
+
+    inline cocos2d::CCEGLView* __cdecl CCEGLView_sharedOpenGLView()
+    {
+        if (!gd::cocos2d::CCEGLView::sharedOpenGLView.isHooked())
+            return gd::cocos2d::CCEGLView::sharedOpenGLView();
+
+        auto hook = gd::cocos2d::CCEGLView::sharedOpenGLView.getHook();
+        return hook();
+    }
+
+    inline void __fastcall CCEGLView_showCursor(cocos2d::CCEGLView *self, int, bool show)
+    {
+        if (!gd::cocos2d::CCEGLView::showCursor.isHooked())
+            return gd::cocos2d::CCEGLView::showCursor(self, show);
+
+        auto hook = gd::cocos2d::CCEGLView::showCursor.getHook();
+        return hook(self, show);
     }
 }
