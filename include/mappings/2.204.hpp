@@ -23,6 +23,9 @@ namespace gd::maps::v2_204
 
         {"EditorPauseLayer::onExitEditor", 0xA2EF0},
 
+        {"FMODAudioEngine::sharedEngine", 0x32bf0},
+        {"FMODAudioEngine::m_system", 0x190},
+
         {"GameManager::sharedState", 0x121540},
         {"GameManager::getGameVariable", 0x128730},
         {"GameManager::setGameVariable", 0x1284E0},
@@ -83,6 +86,7 @@ namespace gd::maps::v2_204
     };
 
     inline std::map<std::string, std::string> signatures = {
+        // Cocos2d
         {"cocos2d::CCDirector::sharedDirector", "?sharedDirector@CCDirector@cocos2d@@SAPAV12@XZ"},
         {"cocos2d::CCDirector::getWinSize", "?getWinSize@CCDirector@cocos2d@@QAE?AVCCSize@2@XZ"},
         {"cocos2d::CCDirector::getOpenGLView", "?getOpenGLView@CCDirector@cocos2d@@QAEPAVCCEGLView@2@XZ"},
@@ -102,10 +106,15 @@ namespace gd::maps::v2_204
         {"cocos2d::CCGLProgram::use", "?use@CCGLProgram@cocos2d@@QAEXXZ"},
         {"cocos2d::CCGLProgram::setUniformsForBuiltins", "?setUniformsForBuiltins@CCGLProgram@cocos2d@@QAEXXZ"},
 
+        {"cocos2d::CCScheduler::update", "?update@CCScheduler@cocos2d@@UAEXM@Z"},
+
         {"cocos2d::CCShaderCache::sharedShaderCache", "?sharedShaderCache@CCShaderCache@cocos2d@@SAPAV12@XZ"},
         {"cocos2d::CCShaderCache::programForKey", "?programForKey@CCShaderCache@cocos2d@@QAEPAVCCGLProgram@2@PBD@Z"},
 
         {"cocos2d::CCTexture2D::constructor", "??0CCTexture2D@cocos2d@@QAE@XZ"},
         {"cocos2d::CCTexture2D::initWithData", "?initWithData@CCTexture2D@cocos2d@@QAE_NPBXW4CCTexture2DPixelFormat@2@IIABVCCSize@2@@Z"},
+
+        // FMOD
+        {"FMOD::ChannelControl::setVolume", "?setVolume@ChannelControl@FMOD@@QAG?AW4FMOD_RESULT@@M@Z"},
     };
 }

@@ -46,9 +46,6 @@ namespace gd
 
     void init()
     {
-        FILE *stream;
-        freopen_s(&stream, "CONOUT$", "w", stdout);
-
         base = reinterpret_cast<uintptr_t>(GetModuleHandleA(nullptr));
         cocosBase = reinterpret_cast<uintptr_t>(GetModuleHandleA("libcocos2d.dll"));
         fmodBase = reinterpret_cast<uintptr_t>(GetModuleHandleA("fmod.dll"));
@@ -102,6 +99,9 @@ namespace gd
         initMethodSignature(cocos2d::CCGLProgram::use, "cocos2d::CCGLProgram::use", &hooks::CCGLProgram_use, cocosBase);
         initMethodSignature(cocos2d::CCGLProgram::setUniformsForBuiltins, "cocos2d::CCGLProgram::setUniformsForBuiltins", &hooks::CCGLProgram_setUniformsForBuiltins, cocosBase);
 
+        // CCScheduler
+        initMethodSignature(cocos2d::CCScheduler::update, "cocos2d::CCScheduler::update", &hooks::CCScheduler_update, cocosBase);
+
         // CCShaderCache
         initMethodSignature(cocos2d::CCShaderCache::sharedShaderCache, "cocos2d::CCShaderCache::sharedShaderCache", &hooks::CCShaderCache_sharedShaderCache, cocosBase, gd::utils::MethodType::CDECLCALL);
         initMethodSignature(cocos2d::CCShaderCache::programForKey, "cocos2d::CCShaderCache::programForKey", &hooks::CCShaderCache_programForKey, cocosBase);
@@ -110,6 +110,10 @@ namespace gd
         initMethodSignature(cocos2d::CCTexture2D::constructor, "cocos2d::CCTexture2D::constructor", &hooks::CCTexture2D_constructor, cocosBase);
         initMethodSignature(cocos2d::CCTexture2D::initWithData, "cocos2d::CCTexture2D::initWithData", &hooks::CCTexture2D_initWithData, cocosBase);
         cocos2d::CCTexture2D::init_m_uName("cocos2d::CCTexture2D::m_uName");
+
+        /// FMOD
+        // ChannelControl
+        initMethodSignature(FMOD::ChannelControl::setVolume, "FMOD::ChannelControl::setVolume", &hooks::ChannelControl_setVolume, fmodBase, gd::utils::MethodType::STDCALL);
 
         /// Geometry Dash
         // AppDelegate
@@ -121,6 +125,10 @@ namespace gd
 
         // EditorPauseLayer
         initMethod(EditorPauseLayer::onExitEditor, "EditorPauseLayer::onExitEditor", &hooks::EditorPauseLayer_onExitEditor);
+
+        // FMODAudioEngine
+        initMethod(FMODAudioEngine::sharedEngine, "FMODAudioEngine::sharedEngine", &hooks::FMODAudioEngine_sharedEngine, gd::utils::MethodType::STDCALL);
+        FMODAudioEngine::init_m_system("FMODAudioEngine::m_system");
 
         // GameManager
         initMethod(GameManager::sharedState, "GameManager::sharedState", &hooks::GameManager_sharedState, gd::utils::MethodType::STDCALL);

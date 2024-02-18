@@ -10,13 +10,17 @@
 #include "classes/cocos/CCEGLViewProtocol.hpp"
 #include "classes/cocos/CCGeometry.hpp"
 #include "classes/cocos/CCGLProgram.hpp"
+#include "classes/cocos/CCScheduler.hpp"
 #include "classes/cocos/CCShaderCache.hpp"
 #include "classes/cocos/CCTexture2D.hpp"
 #include "classes/cocos/Global.hpp"
 
+#include "classes/fmod/ChannelControl.hpp"
+
 #include "classes/AppDelegate.hpp"
 #include "classes/CCCircleWave.hpp"
 #include "classes/EditorPauseLayer.hpp"
+#include "classes/FMODAudioEngine.hpp"
 #include "classes/GameManager.hpp"
 #include "classes/GameObject.hpp"
 #include "classes/GameStatsManager.hpp"
