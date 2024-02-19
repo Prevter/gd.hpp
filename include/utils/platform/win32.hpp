@@ -11,13 +11,8 @@
 #define WIN32_LEAN_AND_MEAN
 #include <Windows.h>
 
-#include "../../classes/cocos/CCGeometry.hpp"
-#include "../../classes/cocos/CCDirector.hpp"
-
 namespace gd::utils
 {
-    using namespace gd::cocos2d;
-
     /// @brief Get the current version of the game.
     /// @return Current version of the game.
     inline std::string getVersion()

@@ -8,14 +8,24 @@
 
 namespace gd
 {
+    class PlayLayer;
+    class LevelEditorLayer;
+    class GJBaseGameLayer;
+    class MenuLayer;
+
     class GameManager
     {
     public:
         INIT_METHOD(GameManager, sharedState, GameManager *, GameManager *(__stdcall *)());
         INIT_METHOD(GameManager, getGameVariable, bool, bool(__fastcall *)(GameManager *, int, const char *), GameManager *, const char *);
         INIT_METHOD(GameManager, setGameVariable, void, void(__fastcall *)(GameManager *, int, const char *, bool), GameManager *, const char *, bool);
+        INIT_METHOD(GameManager, updateCustomFPS, void, void(__fastcall *)(GameManager *), GameManager *);
 
         INIT_MEMBER(float, m_customFPSTarget)
+        INIT_MEMBER(PlayLayer*, m_playLayer)
+        INIT_MEMBER(LevelEditorLayer*, m_levelEditorLayer)
+        INIT_MEMBER(GJBaseGameLayer*, m_gameLayer)
+        INIT_MEMBER(MenuLayer*, m_menuLayer)
 
     private:
         friend void init();
@@ -49,5 +59,14 @@ namespace gd::hooks
 
         auto hook = GameManager::setGameVariable.getHook();
         return hook(self, name, value);
+    }
+
+    inline void __fastcall GameManager_updateCustomFPS(GameManager *self)
+    {
+        if (!GameManager::updateCustomFPS.isHooked())
+            return GameManager::updateCustomFPS(self);
+
+        auto hook = GameManager::updateCustomFPS.getHook();
+        return hook(self);
     }
 }

@@ -5,6 +5,7 @@
 // ~~~~~~~~~~~~~~~~
 #pragma once
 
+#include "classes/cocos/CCApplication.hpp"
 #include "classes/cocos/CCDirector.hpp"
 #include "classes/cocos/CCEGLView.hpp"
 #include "classes/cocos/CCEGLViewProtocol.hpp"

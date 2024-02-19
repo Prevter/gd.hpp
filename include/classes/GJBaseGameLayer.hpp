@@ -11,6 +11,10 @@ namespace gd
     class GJBaseGameLayer
     {
     public:
+        inline static GJBaseGameLayer* get() {
+            return GameManager::sharedState()->m_gameLayer();
+        }
+
         INIT_METHOD(GJBaseGameLayer, init, bool, bool(__fastcall *)(GJBaseGameLayer *), GJBaseGameLayer *);
         INIT_METHOD(GJBaseGameLayer, handleButton, void, void(__fastcall *)(GJBaseGameLayer *, int, bool, int, bool), GJBaseGameLayer *, bool, int, bool);
     };

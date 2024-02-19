@@ -59,6 +59,10 @@ namespace gd
         initMethodSignature(cocos2d::ccGLBlendFunc, "cocos2d::ccGLBlendFunc", &hooks::ccGLBlendFunc, cocosBase, gd::utils::MethodType::CDECLCALL);
         initMethodSignature(cocos2d::ccGLBindTexture2D, "cocos2d::ccGLBindTexture2D", &hooks::ccGLBindTexture2D, cocosBase, gd::utils::MethodType::CDECLCALL);
 
+        // CCApplication
+        initMethodSignature(cocos2d::CCApplication::sharedApplication, "cocos2d::CCApplication::sharedApplication", &hooks::CCApplication_sharedApplication, cocosBase, gd::utils::MethodType::CDECLCALL);
+        initMethodSignature(cocos2d::CCApplication::toggleVerticalSync, "cocos2d::CCApplication::toggleVerticalSync", &hooks::CCApplication_toggleVerticalSync, cocosBase);
+
         // CCEGLView
         initMethodSignature(cocos2d::CCEGLView::swapBuffers, "cocos2d::CCEGLView::swapBuffers", &hooks::CCEGLView_swapBuffers, cocosBase);
         initMethodSignature(cocos2d::CCEGLView::pollEvents, "cocos2d::CCEGLView::pollEvents", &hooks::CCEGLView_pollEvents, cocosBase);
@@ -134,7 +138,12 @@ namespace gd
         initMethod(GameManager::sharedState, "GameManager::sharedState", &hooks::GameManager_sharedState, gd::utils::MethodType::STDCALL);
         initMethod(GameManager::getGameVariable, "GameManager::getGameVariable", &hooks::GameManager_getGameVariable);
         initMethod(GameManager::setGameVariable, "GameManager::setGameVariable", &hooks::GameManager_setGameVariable);
+        initMethod(GameManager::updateCustomFPS, "GameManager::updateCustomFPS", &hooks::GameManager_updateCustomFPS);
         GameManager::init_m_customFPSTarget("GameManager::m_customFPSTarget");
+        GameManager::init_m_playLayer("GameManager::m_playLayer");
+        GameManager::init_m_levelEditorLayer("GameManager::m_levelEditorLayer");
+        GameManager::init_m_gameLayer("GameManager::m_gameLayer");
+        GameManager::init_m_menuLayer("GameManager::m_menuLayer");
 
         // GameObject
         GameObject::init_m_objectID("GameObject::m_objectID");

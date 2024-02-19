@@ -29,7 +29,12 @@ namespace gd::maps::v2_204
         {"GameManager::sharedState", 0x121540},
         {"GameManager::getGameVariable", 0x128730},
         {"GameManager::setGameVariable", 0x1284E0},
+        {"GameManager::updateCustomFPS", 0x12EC60},
         {"GameManager::m_customFPSTarget", 0x384},
+        {"GameManager::m_playLayer", 0x198},
+        {"GameManager::m_levelEditorLayer", 0x19C},
+        {"GameManager::m_gameLayer", 0x1A0},
+        {"GameManager::m_menuLayer", 0x1A8},
 
         {"GameObject::m_objectID", 0x384},
         {"GameObject::m_startPosition", 0x340},
@@ -87,6 +92,9 @@ namespace gd::maps::v2_204
 
     inline std::map<std::string, std::string> signatures = {
         // Cocos2d
+        {"cocos2d::CCApplication::sharedApplication", "?sharedApplication@CCApplication@cocos2d@@SAPAV12@XZ"},
+        {"cocos2d::CCApplication::toggleVerticalSync", "?toggleVerticalSync@CCApplication@cocos2d@@QAEX_N@Z"},
+
         {"cocos2d::CCDirector::sharedDirector", "?sharedDirector@CCDirector@cocos2d@@SAPAV12@XZ"},
         {"cocos2d::CCDirector::getWinSize", "?getWinSize@CCDirector@cocos2d@@QAE?AVCCSize@2@XZ"},
         {"cocos2d::CCDirector::getOpenGLView", "?getOpenGLView@CCDirector@cocos2d@@QAEPAVCCEGLView@2@XZ"},

@@ -5,6 +5,7 @@
 
 #pragma once
 #include "../utils/class.hpp"
+#include "GameManager.hpp"
 
 namespace gd
 {
@@ -13,6 +14,10 @@ namespace gd
     class LevelEditorLayer
     {
     public:
+        inline static LevelEditorLayer* get() {
+            return GameManager::sharedState()->m_levelEditorLayer();
+        }
+
         INIT_METHOD(LevelEditorLayer, init, bool, bool(__fastcall *)(LevelEditorLayer *, int, GJGameLevel *, bool), LevelEditorLayer *, GJGameLevel *, bool);
     };
 }

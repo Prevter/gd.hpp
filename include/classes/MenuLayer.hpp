@@ -5,12 +5,17 @@
 
 #pragma once
 #include "../utils/class.hpp"
+#include "GameManager.hpp"
 
 namespace gd
 {
     class MenuLayer
     {
     public:
+        inline static MenuLayer* get() {
+            return GameManager::sharedState()->m_menuLayer();
+        }
+
         INIT_METHOD(MenuLayer, init, bool, bool(__fastcall *)(MenuLayer *), MenuLayer *);
     };
 }

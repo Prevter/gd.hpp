@@ -6,6 +6,7 @@
 #pragma once
 #include "../utils/class.hpp"
 #include "GameObject.hpp"
+#include "GameManager.hpp"
 
 namespace gd
 {
@@ -15,6 +16,10 @@ namespace gd
     class PlayLayer
     {
     public:
+        inline static PlayLayer* get() {
+            return GameManager::sharedState()->m_playLayer();
+        }
+
         INIT_METHOD(PlayLayer, init, bool, bool(__fastcall *)(PlayLayer *, int, GJGameLevel *, bool, bool), PlayLayer *, GJGameLevel *, bool, bool);
         INIT_METHOD(PlayLayer, update, void, void(__fastcall *)(PlayLayer *, int, float), PlayLayer *, float);
         INIT_METHOD(PlayLayer, destructor, void, void(__fastcall *)(PlayLayer *), PlayLayer *);
