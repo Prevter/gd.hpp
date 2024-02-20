@@ -1,20 +1,14 @@
 #pragma once
 
+#include "dash/bindings/cocos/cocos2d.hpp"
+#include "dash/bindings/GameManager.hpp"
+#include "dash/bindings/GJGameLevel.hpp"
+#include "dash/bindings/PlayLayer.hpp"
+
 #include <cstdint>
 #include <string>
 
+/// @brief The namespace for the Geometry Dash API.
 namespace gd {
-    /// @brief Find current offset for a given symbol.
-    /// @param name The name of the symbol.
-    /// @return The offset of the symbol.
-    uintptr_t findOffset(const std::string &name);
 
-    /// @brief Find current offset for a given signature.
-    /// @param signature The signature of the symbol.
-    /// @return The offset of the symbol.
-    uintptr_t findSignature(const std::string &signature);
-
-    /// @brief Get the current version of the game.
-    /// @return The version of the game.
-    const std::string &getVersion();
 }

@@ -1,4 +1,6 @@
-#include <gd.hpp>
+#include <dash/internal.hpp>
+#include <dash/mappings.hpp>
+#include <dash/utils.hpp>
 
 #include <unordered_map>
 #include <string>
@@ -16,12 +18,39 @@ namespace gd {
         if (addressCache.find(name) != addressCache.end())
             return addressCache[name];
 
-        auto version = getVersion();
+        const auto& version = getVersion();
+        auto versionMap = gd::maps::getForVersion(version);
+
+        // if the version is not found, return 0
+        if (versionMap.find(name) == versionMap.end())
+            return 0;
+
+        auto address = versionMap.at(name);
+        addressCache[name] = address;
+        return address;
     }
 
-    uintptr_t findSignature(const std::string &signature);
+    uintptr_t findSignature(const std::string &name) {
+        if (addressCache.find(name) != addressCache.end())
+            return addressCache[name];
+
+        const auto& version = getVersion();
+        auto versionMap = gd::maps::getSignaturesForVersion(version);
+
+        // if the version is not found, return 0
+        if (versionMap.find(name) == versionMap.end())
+            return 0;
+
+        auto signature = versionMap.at(name);
+        auto address = gd::utils::findSymbol(signature.module, signature.symbol);
+        addressCache[name] = address;
+        return address;
+    }
 
     const std::string &getVersion() {
+        if (!gameVersion.empty())
+            return gameVersion;
+
         std::map<uint32_t, std::string> versionMap = {
                 {1419173053, "1.900"},
                 {1419880840, "1.910"},
@@ -45,7 +74,7 @@ namespace gd {
                 {1705041028, "2.204"},
         };
 
-        HMODULE module = GetModuleHandleA(NULL);
+        HMODULE module = GetModuleHandleA(nullptr);
         auto dos_header = (PIMAGE_DOS_HEADER)module;
 
         if (dos_header->e_magic != IMAGE_DOS_SIGNATURE)
