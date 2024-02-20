@@ -13,7 +13,7 @@ namespace gd {
 
     class PlayLayer {
     public:
-        inline static PlayLayer* get() {
+        inline static PlayLayer *get() {
             return GameManager::sharedState()->m_playLayer();
         }
 
@@ -77,17 +77,39 @@ namespace gd {
             method(this, value);
         }
 
+        inline void playPlatformerEndAnimationToPos(cocos2d::CCPoint pos, bool unk) {
+            SETUP_METHOD(void, "PlayLayer::playPlatformerEndAnimationToPos", __thiscall, PlayLayer *, cocos2d::CCPoint,
+                         bool);
+            method(this, pos, unk);
+        }
+
+        inline void playEndAnimationToPos(cocos2d::CCPoint pos) {
+            SETUP_METHOD(void, "PlayLayer::playEndAnimationToPos", __thiscall, PlayLayer *, cocos2d::CCPoint);
+            method(this, pos);
+        }
+
         SETUP_MEMBER(bool, m_isPracticeMode, "PlayLayer::m_isPracticeMode")
+
         SETUP_MEMBER(void *, m_startPosCheckpoint, "PlayLayer::m_startPosCheckpoint")
+
         SETUP_MEMBER(int, m_jumps, "PlayLayer::m_jumps")
+
         SETUP_MEMBER(int, m_attempts, "PlayLayer::m_attempts")
+
         SETUP_MEMBER(bool, m_isAlive, "PlayLayer::m_isAlive")
+
         SETUP_MEMBER(bool, m_isDead, "PlayLayer::m_isDead")
+
         SETUP_MEMBER(PlayerObject *, m_player1, "PlayLayer::m_player1")
+
         SETUP_MEMBER(PlayerObject *, m_player2, "PlayLayer::m_player2")
+
         SETUP_MEMBER(GJGameLevel *, m_level, "PlayLayer::m_level")
+
         SETUP_MEMBER(double, m_time, "PlayLayer::m_time")
+
         SETUP_MEMBER(bool, m_dualMode, "PlayLayer::m_dualMode")
+
         SETUP_MEMBER(bool, m_hasCompleted, "PlayLayer::m_hasCompleted")
     };
 }

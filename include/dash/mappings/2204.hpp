@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../internal.hpp"
+#include "signature.hpp"
 
 #include <cstdint>
 #include <string>
@@ -79,6 +79,8 @@ namespace gd::maps::v2_204 {
             {"PlayLayer::resetLevelFromStart",              0x2EA090},
             {"PlayLayer::markCheckpoint",                   0x2E8550},
             {"PlayLayer::togglePracticeMode",               0x2EAD30},
+            {"PlayLayer::playEndAnimationToPos",            0x2dfe00},
+            {"PlayLayer::playPlatformerEndAnimationToPos",  0x2e05e0},
             {"PlayLayer::m_isPracticeMode",                 0x2A7C},
             {"PlayLayer::m_startPosCheckpoint",             0x2E14},
             {"PlayLayer::m_jumps",                          0x2EA4},
