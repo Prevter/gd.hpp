@@ -3,6 +3,7 @@
 #include "../internal.hpp"
 
 #include "GameManager.hpp"
+#include "GJGameState.hpp"
 
 namespace gd {
     class GJGameLevel;
@@ -17,9 +18,9 @@ namespace gd {
             return GameManager::sharedState()->m_playLayer();
         }
 
-        inline bool init(GJGameLevel *level, bool unk, bool unk2) {
+        inline bool init(GJGameLevel *level, bool useReplay, bool dontCreateObjects) {
             SETUP_METHOD(bool, "PlayLayer::init", __thiscall, PlayLayer *, GJGameLevel *, bool, bool);
-            return method(this, level, unk, unk2);
+            return method(this, level, useReplay, dontCreateObjects);
         }
 
         inline void update(float dt) {
@@ -111,5 +112,7 @@ namespace gd {
         SETUP_MEMBER(bool, m_dualMode, "PlayLayer::m_dualMode")
 
         SETUP_MEMBER(bool, m_hasCompleted, "PlayLayer::m_hasCompleted")
+
+        SETUP_MEMBER(GJGameState, m_gameState, "PlayLayer::m_gameState")
     };
 }

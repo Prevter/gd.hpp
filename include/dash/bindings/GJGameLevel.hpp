@@ -50,5 +50,6 @@ namespace gd {
         SETUP_MEMBER(std::string, m_creatorName, "GJGameLevel::m_creatorName")
         SETUP_MEMBER(GJDifficulty, m_difficulty, "GJGameLevel::m_difficulty")
         SETUP_MEMBER(int, m_ratingsSum, "GJGameLevel::m_ratingsSum")
+        SETUP_MEMBER(float, m_timestamp, "GJGameLevel::m_timestamp")
     };
 }

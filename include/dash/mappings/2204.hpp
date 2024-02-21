@@ -59,6 +59,9 @@ namespace gd::maps::v2_204 {
             {"GJGameLevel::m_creatorName",                  0x160},
             {"GJGameLevel::m_difficulty",                   0x210},
             {"GJGameLevel::m_ratingsSum",                   0x238},
+            {"GJGameLevel::m_timestamp",                    0x414},
+
+            {"GJGameState::m_stepSpeed",                    0x1F8},
 
             {"LevelEditorLayer::init",                      0x239A70},
 
@@ -93,6 +96,7 @@ namespace gd::maps::v2_204 {
             {"PlayLayer::m_time",                           0x2EF0},
             {"PlayLayer::m_dualMode",                       0x36E},
             {"PlayLayer::m_hasCompleted",                   0x2C28},
+            {"PlayLayer::m_gameState",                      0x148},
     };
 
     inline std::unordered_map<std::string, Signature> signatures = {

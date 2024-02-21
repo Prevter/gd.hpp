@@ -5,6 +5,24 @@
 
 namespace gd::hook::PlayLayer {
 
+    // PlayLayer::init
+
+    inline static uintptr_t init_addr = 0x0;
+    inline static std::function<bool(gd::PlayLayer*, gd::GJGameLevel*, bool, bool)> init_hook;
+
+    /// @brief Calls the original PlayLayer::init function.
+    inline static bool init(gd::PlayLayer* self, gd::GJGameLevel* level, bool useReplay, bool dontCreateObjects) {
+        return reinterpret_cast<bool (__thiscall *)(gd::PlayLayer*, gd::GJGameLevel*, bool, bool)>(init_addr)(self, level, useReplay, dontCreateObjects);
+    }
+
+    /// @brief Wrapper for the PlayLayer::init hook.
+    inline bool __fastcall initHook(gd::PlayLayer* self, int, gd::GJGameLevel* level, bool useReplay, bool dontCreateObjects) {
+        return init_hook(self, level, useReplay, dontCreateObjects);
+    }
+
+    /// @brief Installs the hook for PlayLayer::init.
+    SETUP_HOOK("PlayLayer::init", bool, init, gd::PlayLayer*, gd::GJGameLevel*, bool, bool)
+
     // PlayLayer::resetLevel
 
     inline static uintptr_t resetLevel_addr = 0x0;
