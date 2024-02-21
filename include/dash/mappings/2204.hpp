@@ -108,7 +108,6 @@ namespace gd::maps::v2_204 {
             {"cocos2d::CCEGLView::pollEvents",               CC_SYM("?pollEvents@CCEGLView@cocos2d@@QAEXXZ")},
             {"cocos2d::CCEGLView::swapBuffers",              CC_SYM("?swapBuffers@CCEGLView@cocos2d@@UAEXXZ")},
             {"cocos2d::CCEGLView::toggleFullScreen",         CC_SYM("?toggleFullScreen@CCEGLView@cocos2d@@QAEX_N0@Z")},
-            {"cocos2d::CCEGLView::getFrameSize",             CC_SYM("?toggleFullScreen@CCEGLView@cocos2d@@QAEX_N0@Z")},
             {"cocos2d::CCEGLView::getWindow",                CC_SYM("?getWindow@CCEGLView@cocos2d@@QBEPAUGLFWwindow@@XZ")},
             {"cocos2d::CCEGLView::sharedOpenGLView",         CC_SYM("?sharedOpenGLView@CCEGLView@cocos2d@@SAPAV12@XZ")},
             {"cocos2d::CCEGLView::showCursor",               CC_SYM("?showCursor@CCEGLView@cocos2d@@QAEX_N@Z")},

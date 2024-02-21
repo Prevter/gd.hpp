@@ -5,6 +5,8 @@
 
 #include <string>
 #include <stdexcept>
+#include <sstream>
+#include <iostream>
 
 #define SETUP_METHOD(returnType, symbol, callingConvention, ...) \
     auto offset = ::gd::findOffset(symbol);                   \
@@ -134,5 +136,85 @@ namespace gd {
         addressCache[name] = address;
         return address;
     }
+
+    /// @brief Helper class for version comparison. (Version("2.204") <= "2.205")
+    class Version {
+    public:
+        explicit Version(const std::string &version) {
+            auto parts = split(version);
+            if (parts.size() != 2)
+                throw std::runtime_error("Invalid version format.");
+
+            major = std::stoi(parts[0]);
+            minor = std::stoi(parts[1]);
+        }
+
+        inline bool operator>=(const Version &other) const {
+            return major > other.major || (major == other.major && minor >= other.minor);
+        }
+
+        inline bool operator<=(const Version &other) const {
+            return major < other.major || (major == other.major && minor <= other.minor);
+        }
+
+        inline bool operator>(const Version &other) const {
+            return major > other.major || (major == other.major && minor > other.minor);
+        }
+
+        inline bool operator<(const Version &other) const {
+            return major < other.major || (major == other.major && minor < other.minor);
+        }
+
+        inline bool operator==(const Version &other) const {
+            return major == other.major && minor == other.minor;
+        }
+
+        inline bool operator!=(const Version &other) const {
+            return major != other.major || minor != other.minor;
+        }
+
+        [[nodiscard]] inline std::string str() const {
+            return std::to_string(major) + "." + std::to_string(minor);
+        }
+
+        // Comparison operators for std::string
+        inline bool operator>=(const std::string &other) const {
+            return *this >= Version(other);
+        }
+
+        inline bool operator<=(const std::string &other) const {
+            return *this <= Version(other);
+        }
+
+        inline bool operator>(const std::string &other) const {
+            return *this > Version(other);
+        }
+
+        inline bool operator<(const std::string &other) const {
+            return *this < Version(other);
+        }
+
+        inline bool operator==(const std::string &other) const {
+            return *this == Version(other);
+        }
+
+        inline bool operator!=(const std::string &other) const {
+            return *this != Version(other);
+        }
+
+    private:
+        inline static std::vector<std::string> split(const std::string &s) {
+            std::vector<std::string> parts;
+            std::string part;
+            std::istringstream stream(s);
+            while (std::getline(stream, part, '.')) {
+                parts.push_back(part);
+            }
+            return parts;
+        }
+
+        int major;
+        int minor;
+    };
 
 }
