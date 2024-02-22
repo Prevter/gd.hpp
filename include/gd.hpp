@@ -6,7 +6,11 @@
 #include "dash/bindings/AppDelegate.hpp"
 #include "dash/bindings/FMODAudioEngine.hpp"
 #include "dash/bindings/GameManager.hpp"
+#include "dash/bindings/GameStatsManager.hpp"
+#include "dash/bindings/GJDropDownLayer.hpp"
 #include "dash/bindings/GJGameLevel.hpp"
+#include "dash/bindings/GJGameState.hpp"
+#include "dash/bindings/OptionsLayer.hpp"
 #include "dash/bindings/PlayLayer.hpp"
 
 #include <cstdint>

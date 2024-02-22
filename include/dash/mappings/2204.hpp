@@ -14,6 +14,8 @@ namespace gd::maps::v2_204 {
 
             {"cocos2d::CCTexture2D::m_uName",               0x44},
 
+            {"cocos2d::CCDirector::m_runningScene",         0xcc},
+
             {"AppDelegate::applicationWillEnterForeground", 0x5B530},
             {"AppDelegate::applicationDidFinishLaunching",  0x5B320},
             {"AppDelegate::applicationDidEnterBackground",  0x5B4F0},
@@ -44,6 +46,8 @@ namespace gd::maps::v2_204 {
 
             {"GameStatsManager::isItemUnlocked",            0x176570},
 
+            {"GJDropDownLayer::showLayer",                  0x1D6B70},
+
             {"GJBaseGameLayer::init",                       0x190290},
             {"GJBaseGameLayer::handleButton",               0x1B69F0},
 
@@ -66,6 +70,8 @@ namespace gd::maps::v2_204 {
             {"LevelEditorLayer::init",                      0x239A70},
 
             {"MenuLayer::init",                             0x27B450},
+
+            {"OptionsLayer::create",                        0x2B01C0},
 
             {"PlayLayer::init",                             0x2DC4A0},
             {"PlayLayer::update",                           0x1BB780},
@@ -121,6 +127,9 @@ namespace gd::maps::v2_204 {
 
             {"cocos2d::CCGLProgram::use",                    CC_SYM("?use@CCGLProgram@cocos2d@@QAEXXZ")},
             {"cocos2d::CCGLProgram::setUniformsForBuiltins", CC_SYM("?setUniformsForBuiltins@CCGLProgram@cocos2d@@QAEXXZ")},
+
+            {"cocos2d::CCNode::addChild",                    CC_SYM("?addChild@CCNode@cocos2d@@UAEXPAV12@@Z")},
+            {"cocos2d::CCNode::setZOrder",                   CC_SYM("?setZOrder@CCNode@cocos2d@@UAEXH@Z")},
 
             {"cocos2d::CCScheduler::update",                 CC_SYM("?update@CCScheduler@cocos2d@@UAEXM@Z")},
 
