@@ -39,4 +39,20 @@ namespace gd::hook::PlayLayer {
     /// @brief Installs the hook for PlayLayer::resetLevel.
     SETUP_HOOK("PlayLayer::resetLevel", void, resetLevel, gd::PlayLayer*)
 
+    // PlayLayer::addObject
+
+    inline static uintptr_t addObject_addr = 0x0;
+    inline static std::function<void(gd::PlayLayer*, gd::GameObject*)> addObject_hook;
+
+    /// @brief Calls the original PlayLayer::addObject function.
+    inline static void addObject(gd::PlayLayer* self, gd::GameObject* object) {
+        return reinterpret_cast<void (__thiscall *)(gd::PlayLayer*, gd::GameObject*)>(addObject_addr)(self, object);
+    }
+
+    /// @brief Wrapper for the PlayLayer::addObject hook.
+    inline void __fastcall addObjectHook(gd::PlayLayer* self, int, gd::GameObject* object) { return addObject_hook(self, object); }
+
+    /// @brief Installs the hook for PlayLayer::addObject.
+    SETUP_HOOK("PlayLayer::addObject", void, addObject, gd::PlayLayer*, gd::GameObject*)
+
 }
