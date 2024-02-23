@@ -49,6 +49,7 @@ namespace gd::maps::v2_204 {
             {"GJDropDownLayer::showLayer",                  0x1D6B70},
 
             {"GJBaseGameLayer::init",                       0x190290},
+            {"GJBaseGameLayer::resetCamera",                0x1C22B0},
             {"GJBaseGameLayer::handleButton",               0x1B69F0},
 
             {"GJGameLevel::m_autoLevel",                    0x30C},
@@ -66,6 +67,8 @@ namespace gd::maps::v2_204 {
             {"GJGameLevel::m_timestamp",                    0x414},
 
             {"GJGameState::m_stepSpeed",                    0x1F8},
+
+            {"LevelSettingsObject::m_resetCamera",          0x16B},
 
             {"LevelEditorLayer::init",                      0x239A70},
 
@@ -103,6 +106,8 @@ namespace gd::maps::v2_204 {
             {"PlayLayer::m_dualMode",                       0x36E},
             {"PlayLayer::m_hasCompleted",                   0x2C28},
             {"PlayLayer::m_gameState",                      0x148},
+
+            {"StartPosObject::m_levelSettings",             0x678},
     };
 
     inline std::unordered_map<std::string, Signature> signatures = {

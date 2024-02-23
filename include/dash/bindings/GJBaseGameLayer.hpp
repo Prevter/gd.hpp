@@ -10,5 +10,10 @@ namespace gd {
         inline static GJBaseGameLayer* get() {
             return GameManager::sharedState()->m_gameLayer();
         }
+
+        inline void resetCamera() {
+            SETUP_METHOD(void, "GJBaseGameLayer::resetCamera", __thiscall, GJBaseGameLayer*);
+            return method(this);
+        }
     };
 }

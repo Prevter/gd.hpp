@@ -4,6 +4,7 @@
 
 #include "GameManager.hpp"
 #include "GJGameState.hpp"
+#include "GJBaseGameLayer.hpp"
 
 namespace gd {
     class GJGameLevel;
@@ -12,7 +13,7 @@ namespace gd {
 
     class PlayerObject;
 
-    class PlayLayer {
+    class PlayLayer : public GJBaseGameLayer {
     public:
         inline static PlayLayer *get() {
             return GameManager::sharedState()->m_playLayer();
