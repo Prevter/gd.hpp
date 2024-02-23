@@ -7,11 +7,11 @@
 #include "../utils/class.hpp"
 #include "GameObject.hpp"
 #include "GameManager.hpp"
+#include "PlayerObject.hpp"
 
 namespace gd
 {
     class GJGameLevel;
-    class PlayerObject;
 
     class PlayLayer
     {
@@ -48,7 +48,7 @@ namespace gd
         INIT_MEMBER(double, m_time)
         INIT_MEMBER(bool, m_dualMode)
         INIT_MEMBER(bool, m_hasCompleted)
-
+        
     private:
         friend void init();
     };

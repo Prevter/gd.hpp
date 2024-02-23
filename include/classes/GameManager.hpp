@@ -26,6 +26,7 @@ namespace gd
         INIT_MEMBER(LevelEditorLayer*, m_levelEditorLayer)
         INIT_MEMBER(GJBaseGameLayer*, m_gameLayer)
         INIT_MEMBER(MenuLayer*, m_menuLayer)
+        INIT_MEMBER(std::string, m_userName)
 
     private:
         friend void init();

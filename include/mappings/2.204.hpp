@@ -35,6 +35,7 @@ namespace gd::maps::v2_204
         {"GameManager::m_levelEditorLayer", 0x19C},
         {"GameManager::m_gameLayer", 0x1A0},
         {"GameManager::m_menuLayer", 0x1A8},
+        {"GameManager::m_userName", 0x1D0},
 
         {"GameObject::m_objectID", 0x384},
         {"GameObject::m_startPosition", 0x340},
@@ -88,6 +89,29 @@ namespace gd::maps::v2_204
         {"PlayLayer::m_time", 0x2EF0},
         {"PlayLayer::m_dualMode", 0x36E},
         {"PlayLayer::m_hasCompleted", 0x2C28},
+
+        {"PlayerObject::playDeathEffect", 0x2BA470},
+        {"PlayerObject::update", 0x2C41B0},
+        {"PlayerObject::toggleVisibility", 0x2C63F0},
+        {"PlayerObject::resetStreak", 0x2C6540},
+        {"PlayerObject::stopDashing", 0x2D0940},
+        {"PlayerObject::playerDestroyed", 0x2D1B30},
+        {"PlayerObject::doReversePlayer", 0x2D2210},
+        {"PlayerObject::flipGravity", 0x2D36E0},
+        {"PlayerObject::m_yAccel", 0x790},
+        {"PlayerObject::m_xAccel", 0x630},
+        {"PlayerObject::m_playerSpeed", 0x7E4},
+        {"PlayerObject::m_playerSize", 0x7E0},
+        {"PlayerObject::m_isShip", 0x7A9},
+        {"PlayerObject::m_isBird", 0x7AA},
+        {"PlayerObject::m_isBall", 0x7AB},
+        {"PlayerObject::m_isDart", 0x7AC},
+        {"PlayerObject::m_isRobot", 0x7AD},
+        {"PlayerObject::m_isSpider", 0x7AE},
+        {"PlayerObject::m_isJetpack", 0x920},
+        {"PlayerObject::m_isSwing", 0x7B4},
+        {"PlayerObject::m_isHolding", 0x775},
+        {"PlayerObject::m_isSliding", 0x7FC},
     };
 
     inline std::map<std::string, std::string> signatures = {
