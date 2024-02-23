@@ -133,8 +133,17 @@ namespace gd::maps::v2_204 {
             {"cocos2d::CCGLProgram::use",                    CC_SYM("?use@CCGLProgram@cocos2d@@QAEXXZ")},
             {"cocos2d::CCGLProgram::setUniformsForBuiltins", CC_SYM("?setUniformsForBuiltins@CCGLProgram@cocos2d@@QAEXXZ")},
 
+            {"cocos2d::CCLabelBMFont::create",               CC_SYM("?create@CCLabelBMFont@cocos2d@@SAPAV12@PBD0@Z")},
+            {"cocos2d::CCLabelBMFont::setString",            CC_SYM("?setString@CCLabelBMFont@cocos2d@@UAEXPBD_N@Z")},
+            {"cocos2d::CCLabelBMFont::setAlignment",         CC_SYM("?setAlignment@CCLabelBMFont@cocos2d@@UAEXW4CCTextAlignment@2@@Z")},
+            {"cocos2d::CCLabelBMFont::setScale",             CC_SYM("?setScale@CCLabelBMFont@cocos2d@@UAEXM@Z")},
+            {"cocos2d::CCLabelBMFont::setAnchorPoint",       CC_SYM("?setAnchorPoint@CCLabelBMFont@cocos2d@@UAEXABVCCPoint@2@@Z")},
+
             {"cocos2d::CCNode::addChild",                    CC_SYM("?addChild@CCNode@cocos2d@@UAEXPAV12@@Z")},
+            {"cocos2d::CCNode::removeChild",                 CC_SYM("?removeChild@CCNode@cocos2d@@UAEXPAV12@@Z")},
             {"cocos2d::CCNode::setZOrder",                   CC_SYM("?setZOrder@CCNode@cocos2d@@UAEXH@Z")},
+            {"cocos2d::CCNode::setPosition",                 CC_SYM("?setPosition@CCNode@cocos2d@@UAEXABVCCPoint@2@@Z")},
+            {"cocos2d::CCNode::setVisible",                  CC_SYM("?setVisible@CCNode@cocos2d@@UAEX_N@Z")},
 
             {"cocos2d::CCScheduler::update",                 CC_SYM("?update@CCScheduler@cocos2d@@UAEXM@Z")},
 
