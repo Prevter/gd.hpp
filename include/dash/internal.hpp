@@ -10,26 +10,26 @@
 
 #define SETUP_METHOD(returnType, symbol, callingConvention, ...) \
     auto offset = ::gd::findOffset(symbol);                   \
-    if (offset == 0)                                               \
+    if (offset == 0xFFFFFFFF)                                               \
         throw std::runtime_error("Failed to find " symbol " offset."); \
     auto method = reinterpret_cast<returnType(callingConvention *)(__VA_ARGS__)>(offset)
 
 #define SETUP_METHOD_SIG(returnType, symbol, callingConvention, ...) \
     auto offset = ::gd::findSignature(symbol);                   \
-    if (offset == 0)                                               \
+    if (offset == 0xFFFFFFFF)                                               \
         throw std::runtime_error("Failed to find " symbol " offset."); \
     auto method = reinterpret_cast<returnType(callingConvention *)(__VA_ARGS__)>(offset)
 
 #define SETUP_MEMBER(type, name, symbol) \
     inline type &name() {                 \
         auto offset = ::gd::getOffset(symbol); \
-        if (offset == 0)                       \
+        if (offset == 0xFFFFFFFF)                       \
             throw std::runtime_error("Failed to find " symbol " offset."); \
         return *reinterpret_cast<type *>(this + offset); \
     }                                    \
     inline void name(type value) {          \
         auto offset = ::gd::getOffset(symbol); \
-        if (offset == 0)                       \
+        if (offset == 0xFFFFFFFF)                       \
             throw std::runtime_error("Failed to find " symbol " offset."); \
         *reinterpret_cast<type *>(this + offset) = value; \
     }
@@ -97,7 +97,7 @@ namespace gd {
 
         // if the version is not found, return 0
         if (versionMap.find(name) == versionMap.end())
-            return 0;
+            return 0xFFFFFFFF;
 
         auto offset = versionMap.at(name);
         addressCache[name] = offset;
@@ -127,9 +127,9 @@ namespace gd {
         const auto &version = getVersion();
         auto versionMap = gd::maps::getSignaturesForVersion(version);
 
-        // if the version is not found, return 0
+        // if the version is not found, return 0xFFFFFFFF
         if (versionMap.find(name) == versionMap.end())
-            return 0;
+            return 0xFFFFFFFF;
 
         auto signature = versionMap.at(name);
         auto address = gd::utils::findSymbol(signature.symbol, signature.module);

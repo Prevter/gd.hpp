@@ -14,9 +14,11 @@ namespace gd::cocos2d {
             return method();
         }
 
-        inline CCSize* getWinSize() {
-            SETUP_METHOD_SIG(CCSize*, "cocos2d::CCDirector::getWinSize", __thiscall, CCDirector*);
-            return method(this);
+        inline CCSize getWinSize() {
+            CCSize size;
+            SETUP_METHOD_SIG(CCSize*, "cocos2d::CCDirector::getWinSize", __thiscall, CCDirector*, CCSize*);
+            method(this, &size);
+            return size;
         }
 
         inline CCEGLView* getOpenGLView() {
