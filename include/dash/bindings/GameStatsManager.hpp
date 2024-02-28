@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../internal.hpp"
+#include "cocos/CCDictionary.hpp"
 
 namespace gd {
     class GJGameLevel;
@@ -21,5 +22,7 @@ namespace gd {
             SETUP_METHOD(void, "GameStatsManager::uncompleteLevel", __thiscall, GameStatsManager*, GJGameLevel*);
             method(this, level);
         }
+
+        SETUP_MEMBER(cocos2d::CCDictionary*, m_verifiedUserCoins, "GameStatsManager::m_verifiedUserCoins")
     };
 }

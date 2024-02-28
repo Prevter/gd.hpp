@@ -95,7 +95,7 @@ namespace gd {
         const auto &version = getVersion();
         auto versionMap = gd::maps::getForVersion(version);
 
-        // if the version is not found, return 0
+        // if the version is not found, return 0xFFFFFFFF
         if (versionMap.find(name) == versionMap.end())
             return 0xFFFFFFFF;
 

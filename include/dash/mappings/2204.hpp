@@ -51,6 +51,7 @@ namespace gd::maps::v2_204 {
             {"GameStatsManager::sharedState",               0x167d90},
             {"GameStatsManager::isItemUnlocked",            0x176570},
             {"GameStatsManager::uncompleteLevel",           0x170400},
+            {"GameStatsManager::m_verifiedUserCoins",       0x1D8},
 
             {"GJDropDownLayer::showLayer",                  0x1D6B70},
 
@@ -76,6 +77,7 @@ namespace gd::maps::v2_204 {
             {"GJBaseGameLayer::m_gameState",                0x148},
             {"GJBaseGameLayer::m_objects",                  0x884},
 
+            {"GJGameLevel::getCoinKey",                     0x114220},
             {"GJGameLevel::m_autoLevel",                    0x30C},
             {"GJGameLevel::m_demon",                        0x2F0},
             {"GJGameLevel::m_demonDifficulty",              0x2FC},
@@ -96,6 +98,7 @@ namespace gd::maps::v2_204 {
             {"GJGameLevel::m_54",                           0x44C},
             {"GJGameLevel::m_k111",                         0x458},
             {"GJGameLevel::m_bestPoints",                   0x454},
+            {"GJGameLevel::m_coins",                        0x310},
 
             {"GJGameState::m_cameraScale",                  0x0},
             {"GJGameState::m_targetCameraScale",            0x4},
@@ -152,6 +155,8 @@ namespace gd::maps::v2_204 {
             {"cocos2d::CCApplication::toggleVerticalSync",   CC_SYM("?toggleVerticalSync@CCApplication@cocos2d@@QAEX_N@Z")},
 
             {"cocos2d::CCArray::count",                      CC_SYM("?count@CCArray@cocos2d@@QBEIXZ")},
+
+            {"cocos2d::CCDictionary::removeObjectForKey",    CC_SYM("?removeObjectForKey@CCDictionary@cocos2d@@QAEXABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z")},
 
             {"cocos2d::CCDirector::sharedDirector",          CC_SYM("?sharedDirector@CCDirector@cocos2d@@SAPAV12@XZ")},
             {"cocos2d::CCDirector::getWinSize",              CC_SYM("?getWinSize@CCDirector@cocos2d@@QAE?AVCCSize@2@XZ")},

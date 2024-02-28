@@ -46,6 +46,11 @@ namespace gd {
             return m_demon().value() > 0;
         }
 
+        inline const char* getCoinKey(int index) {
+            SETUP_METHOD(const char*, "GJGameLevel::getCoinKey", __thiscall, GJGameLevel*, int);
+            return method(this, index);
+        }
+
         SETUP_MEMBER(bool, m_autoLevel, "GJGameLevel::m_autoLevel")
         SETUP_MEMBER(SeedValueRSV, m_demon, "GJGameLevel::m_demon")
         SETUP_MEMBER(int, m_demonDifficulty, "GJGameLevel::m_demonDifficulty")
@@ -66,5 +71,6 @@ namespace gd {
         SETUP_MEMBER(int, m_54, "GJGameLevel::m_54")
         SETUP_MEMBER(int, m_k111, "GJGameLevel::m_k111")
         SETUP_MEMBER(int, m_bestPoints, "GJGameLevel::m_bestPoints")
+        SETUP_MEMBER(int, m_coins, "GJGameLevel::m_coins")
     };
 }
