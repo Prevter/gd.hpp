@@ -31,6 +31,9 @@ namespace gd::maps::v2_204 {
             {"FMODAudioEngine::sharedEngine",               0x32bf0},
             {"FMODAudioEngine::m_system",                   0x190},
 
+            {"GameLevelManager::sharedState",               0xf3a00},
+            {"GameLevelManager::saveLevel",                 0xf8130},
+
             {"GameManager::sharedState",                    0x121540},
             {"GameManager::getGameVariable",                0x128730},
             {"GameManager::setGameVariable",                0x1284E0},
@@ -45,7 +48,9 @@ namespace gd::maps::v2_204 {
             {"GameObject::m_objectID",                      0x384},
             {"GameObject::m_startPosition",                 0x340},
 
+            {"GameStatsManager::sharedState",               0x167d90},
             {"GameStatsManager::isItemUnlocked",            0x176570},
+            {"GameStatsManager::uncompleteLevel",           0x170400},
 
             {"GJDropDownLayer::showLayer",                  0x1D6B70},
 
@@ -85,6 +90,12 @@ namespace gd::maps::v2_204 {
             {"GJGameLevel::m_ratingsSum",                   0x238},
             {"GJGameLevel::m_timestamp",                    0x414},
             {"GJGameLevel::m_bestTime",                     0x450},
+            {"GJGameLevel::m_practicePercent",              0x2C4},
+            {"GJGameLevel::m_newNormalPercent2",            0x2B8},
+            {"GJGameLevel::m_orbCompletion",                0x2AC},
+            {"GJGameLevel::m_54",                           0x44C},
+            {"GJGameLevel::m_k111",                         0x458},
+            {"GJGameLevel::m_bestPoints",                   0x454},
 
             {"GJGameState::m_cameraScale",                  0x0},
             {"GJGameState::m_targetCameraScale",            0x4},

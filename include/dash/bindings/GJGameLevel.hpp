@@ -60,5 +60,11 @@ namespace gd {
         SETUP_MEMBER(int, m_ratingsSum, "GJGameLevel::m_ratingsSum")
         SETUP_MEMBER(float, m_timestamp, "GJGameLevel::m_timestamp")
         SETUP_MEMBER(int, m_bestTime, "GJGameLevel::m_bestTime")
+        SETUP_MEMBER(int, m_practicePercent, "GJGameLevel::m_practicePercent")
+        SETUP_MEMBER(SeedValueRSV, m_newNormalPercent2, "GJGameLevel::m_newNormalPercent2")
+        SETUP_MEMBER(SeedValueRSV, m_orbCompletion, "GJGameLevel::m_orbCompletion")
+        SETUP_MEMBER(int, m_54, "GJGameLevel::m_54")
+        SETUP_MEMBER(int, m_k111, "GJGameLevel::m_k111")
+        SETUP_MEMBER(int, m_bestPoints, "GJGameLevel::m_bestPoints")
     };
 }

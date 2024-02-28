@@ -5,6 +5,7 @@
 
 #include "dash/bindings/AppDelegate.hpp"
 #include "dash/bindings/FMODAudioEngine.hpp"
+#include "dash/bindings/GameLevelManager.hpp"
 #include "dash/bindings/GameManager.hpp"
 #include "dash/bindings/GameObject.hpp"
 #include "dash/bindings/GameStatsManager.hpp"
