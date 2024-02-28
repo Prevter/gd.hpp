@@ -38,12 +38,20 @@ namespace gd {
 
     class GJGameLevel {
     public:
+        inline bool isPlatformer() {
+            return m_levelLength() == GJLevelLength::Platformer;
+        }
+
+        inline bool isDemon() {
+            return m_demon().value() > 0;
+        }
+
         SETUP_MEMBER(bool, m_autoLevel, "GJGameLevel::m_autoLevel")
-        SETUP_MEMBER(bool, m_demon, "GJGameLevel::m_demon")
+        SETUP_MEMBER(SeedValueRSV, m_demon, "GJGameLevel::m_demon")
         SETUP_MEMBER(int, m_demonDifficulty, "GJGameLevel::m_demonDifficulty")
         SETUP_MEMBER(GJLevelLength, m_levelLength, "GJGameLevel::m_levelLength")
-        SETUP_MEMBER(int, m_stars, "GJGameLevel::m_stars")
-        SETUP_MEMBER(int, m_normalPercent, "GJGameLevel::m_normalPercent")
+        SETUP_MEMBER(SeedValueRSV, m_stars, "GJGameLevel::m_stars")
+        SETUP_MEMBER(SeedValueVSR, m_normalPercent, "GJGameLevel::m_normalPercent")
         SETUP_MEMBER(std::string, m_levelName, "GJGameLevel::m_levelName")
         SETUP_MEMBER(SeedValueRSV, m_levelID, "GJGameLevel::m_levelID")
         SETUP_MEMBER(SeedValueRSV, m_objectCount, "GJGameLevel::m_objectCount")
@@ -51,5 +59,6 @@ namespace gd {
         SETUP_MEMBER(GJDifficulty, m_difficulty, "GJGameLevel::m_difficulty")
         SETUP_MEMBER(int, m_ratingsSum, "GJGameLevel::m_ratingsSum")
         SETUP_MEMBER(float, m_timestamp, "GJGameLevel::m_timestamp")
+        SETUP_MEMBER(int, m_bestTime, "GJGameLevel::m_bestTime")
     };
 }

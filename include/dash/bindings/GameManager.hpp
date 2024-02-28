@@ -38,5 +38,6 @@ namespace gd {
         SETUP_MEMBER(LevelEditorLayer*, m_levelEditorLayer, "GameManager::m_levelEditorLayer")
         SETUP_MEMBER(GJBaseGameLayer*, m_gameLayer, "GameManager::m_gameLayer")
         SETUP_MEMBER(MenuLayer*, m_menuLayer, "GameManager::m_menuLayer")
+        SETUP_MEMBER(std::string, m_playerName, "GameManager::m_playerName")
     };
 }

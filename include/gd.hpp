@@ -8,9 +8,11 @@
 #include "dash/bindings/GameManager.hpp"
 #include "dash/bindings/GameObject.hpp"
 #include "dash/bindings/GameStatsManager.hpp"
+#include "dash/bindings/GJBaseGameLayer.hpp"
 #include "dash/bindings/GJDropDownLayer.hpp"
 #include "dash/bindings/GJGameLevel.hpp"
 #include "dash/bindings/GJGameState.hpp"
+#include "dash/bindings/LevelEditorLayer.hpp"
 #include "dash/bindings/LevelSettingsObject.hpp"
 #include "dash/bindings/OptionsLayer.hpp"
 #include "dash/bindings/PlayLayer.hpp"
@@ -20,6 +22,4 @@
 #include <string>
 
 /// @brief The namespace for the Geometry Dash API.
-namespace gd {
-
-}
+namespace gd {}

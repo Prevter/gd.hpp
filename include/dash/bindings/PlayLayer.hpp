@@ -3,16 +3,9 @@
 #include "../internal.hpp"
 
 #include "GameManager.hpp"
-#include "GJGameState.hpp"
 #include "GJBaseGameLayer.hpp"
 
 namespace gd {
-    class GJGameLevel;
-
-    class GameObject;
-
-    class PlayerObject;
-
     class PlayLayer : public GJBaseGameLayer {
     public:
         inline static PlayLayer *get() {
@@ -22,11 +15,6 @@ namespace gd {
         inline bool init(GJGameLevel *level, bool useReplay, bool dontCreateObjects) {
             SETUP_METHOD(bool, "PlayLayer::init", __thiscall, PlayLayer *, GJGameLevel *, bool, bool);
             return method(this, level, useReplay, dontCreateObjects);
-        }
-
-        inline void update(float dt) {
-            SETUP_METHOD(void, "PlayLayer::update", __thiscall, PlayLayer *, float);
-            method(this, dt);
         }
 
         inline void destructor() {
@@ -42,26 +30,6 @@ namespace gd {
         inline int onQuit() {
             SETUP_METHOD(int, "PlayLayer::onQuit", __thiscall, PlayLayer *);
             return method(this);
-        }
-
-        inline void addObject(GameObject *obj) {
-            SETUP_METHOD(void, "PlayLayer::addObject", __thiscall, PlayLayer *, GameObject *);
-            method(this, obj);
-        }
-
-        inline void destroyObject(GameObject *obj) {
-            SETUP_METHOD(void, "PlayLayer::destroyObject", __thiscall, PlayLayer *, GameObject *);
-            method(this, obj);
-        }
-
-        inline void pickupCoin(GameObject *obj) {
-            SETUP_METHOD(void, "PlayLayer::pickupCoin", __thiscall, PlayLayer *, GameObject *);
-            method(this, obj);
-        }
-
-        inline void setStartPosObject(GameObject *obj) {
-            SETUP_METHOD(void, "PlayLayer::setStartPosObject", __thiscall, PlayLayer *, GameObject *);
-            method(this, obj);
         }
 
         inline void startMusic() {
@@ -90,30 +58,9 @@ namespace gd {
             method(this, pos);
         }
 
-        SETUP_MEMBER(bool, m_isPracticeMode, "PlayLayer::m_isPracticeMode")
-
-        SETUP_MEMBER(void *, m_startPosCheckpoint, "PlayLayer::m_startPosCheckpoint")
-
-        SETUP_MEMBER(int, m_jumps, "PlayLayer::m_jumps")
-
-        SETUP_MEMBER(int, m_attempts, "PlayLayer::m_attempts")
-
-        SETUP_MEMBER(bool, m_isAlive, "PlayLayer::m_isAlive")
-
-        SETUP_MEMBER(bool, m_isDead, "PlayLayer::m_isDead")
-
-        SETUP_MEMBER(PlayerObject *, m_player1, "PlayLayer::m_player1")
-
-        SETUP_MEMBER(PlayerObject *, m_player2, "PlayLayer::m_player2")
-
-        SETUP_MEMBER(GJGameLevel *, m_level, "PlayLayer::m_level")
-
-        SETUP_MEMBER(double, m_time, "PlayLayer::m_time")
-
-        SETUP_MEMBER(bool, m_dualMode, "PlayLayer::m_dualMode")
-
-        SETUP_MEMBER(bool, m_hasCompleted, "PlayLayer::m_hasCompleted")
-
-        SETUP_MEMBER(GJGameState, m_gameState, "PlayLayer::m_gameState")
+        inline int getCurrentPercentInt() {
+            SETUP_METHOD(int, "PlayLayer::getCurrentPercentInt", __thiscall, PlayLayer *);
+            return method(this);
+        }
     };
 }
