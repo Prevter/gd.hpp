@@ -15,6 +15,7 @@
 #include "dash/bindings/LevelEditorLayer.hpp"
 #include "dash/bindings/LevelSettingsObject.hpp"
 #include "dash/bindings/OptionsLayer.hpp"
+#include "dash/bindings/PlayerObject.hpp"
 #include "dash/bindings/PlayLayer.hpp"
 #include "dash/bindings/StartPosObject.hpp"
 

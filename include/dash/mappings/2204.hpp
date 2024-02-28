@@ -101,6 +101,22 @@ namespace gd::maps::v2_204 {
 
             {"OptionsLayer::create",                        0x2B01C0},
 
+            {"PlayerObject::m_position",                    0x854},
+            {"PlayerObject::m_yAccel",                      0x790},
+            {"PlayerObject::m_xAccel",                      0x630},
+            {"PlayerObject::m_playerSpeed",                 0x7E4},
+            {"PlayerObject::m_playerSize",                  0x7E0},
+            {"PlayerObject::m_isShip",                      0x7A9},
+            {"PlayerObject::m_isBird",                      0x7AA},
+            {"PlayerObject::m_isBall",                      0x7AB},
+            {"PlayerObject::m_isDart",                      0x7AC},
+            {"PlayerObject::m_isRobot",                     0x7AD},
+            {"PlayerObject::m_isSpider",                    0x7AE},
+            {"PlayerObject::m_isJetpack",                   0x920},
+            {"PlayerObject::m_isSwing",                     0x7B4},
+            {"PlayerObject::m_isHolding",                   0x775},
+            {"PlayerObject::m_isSliding",                   0x7FC},
+
             {"PlayLayer::init",                             0x2DC4A0},
             {"PlayLayer::~PlayLayer",                       0x2DC080},
             {"PlayLayer::resetLevel",                       0x2EA130},
