@@ -177,7 +177,7 @@ namespace gd::maps::v2_204 {
             {"cocos2d::CCGLProgram::setUniformsForBuiltins", CC_SYM("?setUniformsForBuiltins@CCGLProgram@cocos2d@@QAEXXZ")},
 
             {"cocos2d::CCLabelBMFont::create",               CC_SYM("?create@CCLabelBMFont@cocos2d@@SAPAV12@PBD0@Z")},
-            {"cocos2d::CCLabelBMFont::setString",            CC_SYM("?setString@CCLabelBMFont@cocos2d@@UAEXPBD_N@Z")},
+            {"cocos2d::CCLabelBMFont::setCString",           CC_SYM("?setCString@CCLabelBMFont@cocos2d@@UAEXPBD@Z")},
             {"cocos2d::CCLabelBMFont::setAlignment",         CC_SYM("?setAlignment@CCLabelBMFont@cocos2d@@UAEXW4CCTextAlignment@2@@Z")},
             {"cocos2d::CCLabelBMFont::setScale",             CC_SYM("?setScale@CCLabelBMFont@cocos2d@@UAEXM@Z")},
             {"cocos2d::CCLabelBMFont::setAnchorPoint",       CC_SYM("?setAnchorPoint@CCLabelBMFont@cocos2d@@UAEXABVCCPoint@2@@Z")},

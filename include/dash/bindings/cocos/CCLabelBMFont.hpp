@@ -20,8 +20,8 @@ namespace gd::cocos2d {
         }
 
         inline void setString(const char* text) {
-            SETUP_METHOD_SIG(void, "cocos2d::CCLabelBMFont::setString", __thiscall, CCLabelBMFont*, const char*, bool);
-            return method(this, text, true);
+            SETUP_METHOD_SIG(void, "cocos2d::CCLabelBMFont::setCString", __thiscall, CCLabelBMFont*, const char*);
+            return method(this, text);
         }
 
         inline void setString(const std::string& text) {

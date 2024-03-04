@@ -1,5 +1,6 @@
 // https://github.com/geode-sdk/geode/blob/main/loader/include/Geode/utils/SeedValue.hpp
 #pragma once
+#include <array>
 
 namespace gd {
     class BaseSeedValue {
