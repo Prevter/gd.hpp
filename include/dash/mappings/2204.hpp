@@ -116,6 +116,8 @@ namespace gd::maps::v2_204 {
 
             {"OptionsLayer::create",                        0x2B01C0},
 
+            {"PlayerObject::pushButton",                    0x2d1d30},
+            {"PlayerObject::releaseButton",                 0x2d1f70},
             {"PlayerObject::m_position",                    0x854},
             {"PlayerObject::m_yAccel",                      0x790},
             {"PlayerObject::m_xAccel",                      0x630},
