@@ -55,4 +55,21 @@ namespace gd::hook::PlayLayer {
     /// @brief Installs the hook for PlayLayer::addObject.
     SETUP_HOOK("PlayLayer::addObject", void, addObject, gd::PlayLayer*, gd::GameObject*)
 
+    // PlayLayer::destroyPlayer
+
+    inline static uintptr_t destroyPlayer_addr = 0x0;
+    inline static std::function<void(gd::PlayLayer*, gd::PlayerObject*, gd::GameObject*)> destroyPlayer_hook;
+
+    /// @brief Calls the original PlayLayer::destroyPlayer function.
+    inline static void destroyPlayer(gd::PlayLayer* self, gd::PlayerObject* player, gd::GameObject* object) {
+        return reinterpret_cast<void (__thiscall *)(gd::PlayLayer*, gd::PlayerObject*, gd::GameObject*)>(destroyPlayer_addr)(self, player, object);
+    }
+
+    /// @brief Wrapper for the PlayLayer::destroyPlayer hook.
+    inline void __fastcall destroyPlayerHook(gd::PlayLayer* self, int, gd::PlayerObject* player, gd::GameObject* object) {
+        return destroyPlayer_hook(self, player, object);
+    }
+
+    /// @brief Installs the hook for PlayLayer::destroyPlayer.
+    SETUP_HOOK("PlayLayer::destroyPlayer", void, destroyPlayer, gd::PlayLayer*, gd::PlayerObject*, gd::GameObject*)
 }

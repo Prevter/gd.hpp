@@ -62,5 +62,10 @@ namespace gd {
             SETUP_METHOD(int, "PlayLayer::getCurrentPercentInt", __thiscall, PlayLayer *);
             return method(this);
         }
+
+        inline void destroyPlayer(PlayerObject *player, GameObject *object) {
+            SETUP_METHOD(void, "PlayLayer::destroyPlayer", __thiscall, PlayLayer *, PlayerObject *, GameObject *);
+            method(this, player, object);
+        }
     };
 }
