@@ -9,6 +9,10 @@ namespace gd {
         Right = 3,
     };
 
+    namespace cocos2d {
+        class CCSprite;
+    }
+
     class PlayerObject {
     public:
         inline void releaseButton(PlayerButton btn) {
@@ -36,5 +40,6 @@ namespace gd {
         SETUP_MEMBER(bool, m_isSwing, "PlayerObject::m_isSwing")
         SETUP_MEMBER(bool, m_isHolding, "PlayerObject::m_isHolding")
         SETUP_MEMBER(bool, m_isSliding, "PlayerObject::m_isSliding")
+        SETUP_MEMBER(cocos2d::CCSprite*, m_iconSpriteSecondary, "PlayerObject::m_iconSpriteSecondary")
     };
 }

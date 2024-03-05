@@ -133,6 +133,7 @@ namespace gd::maps::v2_204 {
             {"PlayerObject::m_isSwing",                     0x7B4},
             {"PlayerObject::m_isHolding",                   0x775},
             {"PlayerObject::m_isSliding",                   0x7FC},
+            {"PlayerObject::m_iconSpriteSecondary",         0x5f0},
 
             {"PlayLayer::init",                             0x2DC4A0},
             {"PlayLayer::~PlayLayer",                       0x2DC080},
