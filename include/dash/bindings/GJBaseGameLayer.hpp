@@ -47,6 +47,11 @@ namespace gd {
             method(this, obj);
         }
 
+        inline void processCommands() {
+            SETUP_METHOD(void, "GJBaseGameLayer::processCommands", __thiscall, GJBaseGameLayer*);
+            method(this);
+        }
+
         SETUP_MEMBER(bool, m_isPracticeMode, "GJBaseGameLayer::m_isPracticeMode")
         SETUP_MEMBER(void *, m_startPosCheckpoint, "GJBaseGameLayer::m_startPosCheckpoint")
         SETUP_MEMBER(int, m_jumps, "GJBaseGameLayer::m_jumps")

@@ -62,6 +62,7 @@ namespace gd::maps::v2_204 {
             {"GJBaseGameLayer::setStartPosObject",          0x199E90},
             {"GJBaseGameLayer::resetCamera",                0x1C22B0},
             {"GJBaseGameLayer::handleButton",               0x1B69F0},
+            {"GJBaseGameLayer::processCommands",            0x1BD240},
             {"GJBaseGameLayer::m_isPracticeMode",           0x2A7C},
             {"GJBaseGameLayer::m_startPosCheckpoint",       0x2E14},
             {"GJBaseGameLayer::m_jumps",                    0x2EA4},
