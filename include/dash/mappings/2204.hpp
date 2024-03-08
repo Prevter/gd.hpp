@@ -77,6 +77,7 @@ namespace gd::maps::v2_204 {
             {"GJBaseGameLayer::m_hasCompleted",             0x2C28},
             {"GJBaseGameLayer::m_gameState",                0x148},
             {"GJBaseGameLayer::m_objects",                  0x884},
+            {"GJBaseGameLayer::m_dTime",                    0x328},
 
             {"GJGameLevel::getCoinKey",                     0x114220},
             {"GJGameLevel::m_autoLevel",                    0x30C},
@@ -118,6 +119,7 @@ namespace gd::maps::v2_204 {
 
             {"PlayerObject::pushButton",                    0x2d1d30},
             {"PlayerObject::releaseButton",                 0x2d1f70},
+            {"PlayerObject::flipGravity",                   0x2d36e0},
             {"PlayerObject::m_position",                    0x854},
             {"PlayerObject::m_yAccel",                      0x790},
             {"PlayerObject::m_xAccel",                      0x630},
@@ -134,6 +136,7 @@ namespace gd::maps::v2_204 {
             {"PlayerObject::m_isHolding",                   0x775},
             {"PlayerObject::m_isSliding",                   0x7FC},
             {"PlayerObject::m_iconSpriteSecondary",         0x5f0},
+            {"PlayerObject::m_isUpsideDown",                0x7AF},
 
             {"PlayLayer::init",                             0x2DC4A0},
             {"PlayLayer::~PlayLayer",                       0x2DC080},

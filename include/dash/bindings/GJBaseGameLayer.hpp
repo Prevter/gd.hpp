@@ -5,11 +5,11 @@
 #include "cocos/CCLayer.hpp"
 #include "GameManager.hpp"
 #include "GJGameState.hpp"
+#include "PlayerObject.hpp"
 
 namespace gd {
     class GJGameLevel;
     class GameObject;
-    class PlayerObject;
 
     class GJBaseGameLayer : public cocos2d::CCLayer {
     public:
@@ -52,6 +52,11 @@ namespace gd {
             method(this);
         }
 
+        inline int handleButton(bool isPressed, PlayerButton button, PlayerObject *player) {
+            SETUP_METHOD(int, "GJBaseGameLayer::handleButton", __thiscall, GJBaseGameLayer*, bool, PlayerButton, PlayerObject*);
+            return method(this, isPressed, button, player);
+        }
+
         SETUP_MEMBER(bool, m_isPracticeMode, "GJBaseGameLayer::m_isPracticeMode")
         SETUP_MEMBER(void *, m_startPosCheckpoint, "GJBaseGameLayer::m_startPosCheckpoint")
         SETUP_MEMBER(int, m_jumps, "GJBaseGameLayer::m_jumps")
@@ -66,5 +71,6 @@ namespace gd {
         SETUP_MEMBER(bool, m_hasCompleted, "GJBaseGameLayer::m_hasCompleted")
         SETUP_MEMBER(GJGameState, m_gameState, "GJBaseGameLayer::m_gameState")
         SETUP_MEMBER(cocos2d::CCArray*, m_objects, "GJBaseGameLayer::m_objects")
+        SETUP_MEMBER(double, m_dTime, "GJBaseGameLayer::m_dTime")
     };
 }

@@ -25,6 +25,11 @@ namespace gd {
             method(this, btn);
         }
 
+        inline void flipGravity(bool flip, bool unk = true) {
+            SETUP_METHOD(void, "PlayerObject::flipGravity", __thiscall, PlayerObject*, bool, bool);
+            method(this, flip, unk);
+        }
+
         SETUP_MEMBER(cocos2d::CCPoint, m_position, "PlayerObject::m_position")
         SETUP_MEMBER(double, m_yAccel, "PlayerObject::m_yAccel")
         SETUP_MEMBER(double, m_xAccel, "PlayerObject::m_xAccel")
@@ -41,5 +46,6 @@ namespace gd {
         SETUP_MEMBER(bool, m_isHolding, "PlayerObject::m_isHolding")
         SETUP_MEMBER(bool, m_isSliding, "PlayerObject::m_isSliding")
         SETUP_MEMBER(cocos2d::CCSprite*, m_iconSpriteSecondary, "PlayerObject::m_iconSpriteSecondary")
+        SETUP_MEMBER(bool, m_isUpsideDown, "PlayerObject::m_isUpsideDown")
     };
 }
