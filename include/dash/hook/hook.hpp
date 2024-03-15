@@ -5,7 +5,7 @@ inline static HookResult name(                           \
         const std::function<returnType(__VA_ARGS__)> &hook,      \
         const std::function<void(void *, void *, void **)> &createHook) {\
     auto address = findOffset(signature);\
-    if (!address) return {nullptr, Status::ADDRESS_NULL};\
+    if (address == 0x8086FFFF) return {nullptr, Status::ADDRESS_NULL};\
     name##_hook = hook;\
     createHook(reinterpret_cast<void *>(address),\
                reinterpret_cast<void *>(&name##Hook),\
@@ -18,7 +18,7 @@ inline static HookResult name(                           \
         const std::function<returnType(__VA_ARGS__)> &hook,      \
         const std::function<void(void *, void *, void **)> &createHook) {\
     auto address = findSignature(signature);\
-    if (!address) return {nullptr, Status::ADDRESS_NULL};\
+    if (address == 0x8086FFFF) return {nullptr, Status::ADDRESS_NULL};\
     name##_hook = hook;\
     createHook(reinterpret_cast<void *>(address),\
                reinterpret_cast<void *>(&name##Hook),\
