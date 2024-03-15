@@ -10,26 +10,26 @@
 
 #define SETUP_METHOD(returnType, symbol, callingConvention, ...) \
     auto offset = ::gd::findOffset(symbol);                   \
-    if (offset == 0x8086FFFF)                                               \
+    if (offset > 0x80000000)                                               \
         throw std::runtime_error("Failed to find " symbol " offset."); \
     auto method = reinterpret_cast<returnType(callingConvention *)(__VA_ARGS__)>(offset)
 
 #define SETUP_METHOD_SIG(returnType, symbol, callingConvention, ...) \
     auto offset = ::gd::findSignature(symbol);                   \
-    if (offset == 0x8086FFFF)                                               \
+    if (offset > 0x80000000)                                               \
         throw std::runtime_error("Failed to find " symbol " offset."); \
     auto method = reinterpret_cast<returnType(callingConvention *)(__VA_ARGS__)>(offset)
 
 #define SETUP_MEMBER(type, name, symbol) \
     inline type &name() {                 \
         auto offset = ::gd::getOffset(symbol); \
-        if (offset == 0x8086FFFF)                       \
+        if (offset > 0x80000000)                       \
             throw std::runtime_error("Failed to find " symbol " offset."); \
         return *reinterpret_cast<type *>(this + offset); \
     }                                    \
     inline void name(type value) {          \
         auto offset = ::gd::getOffset(symbol); \
-        if (offset == 0x8086FFFF)                       \
+        if (offset > 0x80000000)                       \
             throw std::runtime_error("Failed to find " symbol " offset."); \
         *reinterpret_cast<type *>(this + offset) = value; \
     }

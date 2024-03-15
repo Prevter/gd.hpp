@@ -20,7 +20,7 @@ namespace gd::maps::v2_204 {
             {"AppDelegate::applicationDidFinishLaunching",  0x5B320},
             {"AppDelegate::applicationDidEnterBackground",  0x5B4F0},
             {"AppDelegate::applicationWillBecomeActive",    0x5B4D0},
-            {"AppDelegate::applicationWillBecomeActive",    0x5B4E0},
+            {"AppDelegate::applicationWillResignActive",    0x5B4E0},
             {"AppDelegate::trySaveGame",                    0x5B790},
 
             {"CCCircleWave::init",                          0x232F0},
