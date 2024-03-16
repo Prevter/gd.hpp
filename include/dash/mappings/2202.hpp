@@ -6,8 +6,8 @@
 #include <string>
 #include <unordered_map>
 
-/// @brief Contains the mappings for version 2.204.
-namespace gd::maps::v2_204 {
+/// @brief Contains the mappings for version 2.202.
+namespace gd::maps::v2_202 {
     inline std::unordered_map<std::string, uintptr_t> addresses = {
             {"cocos2d::CCEGLView::m_fMouseX",               0xBC},
             {"cocos2d::CCEGLView::m_fMouseY",               0xC0},
@@ -16,28 +16,28 @@ namespace gd::maps::v2_204 {
 
             {"cocos2d::CCDirector::m_runningScene",         0xcc},
 
-            {"AppDelegate::applicationWillEnterForeground", 0x5B530},
-            {"AppDelegate::applicationDidFinishLaunching",  0x5B320},
-            {"AppDelegate::applicationDidEnterBackground",  0x5B4F0},
-            {"AppDelegate::applicationWillBecomeActive",    0x5B4D0},
-            {"AppDelegate::applicationWillResignActive",    0x5B4E0},
-            {"AppDelegate::trySaveGame",                    0x5B790},
+            {"AppDelegate::applicationWillEnterForeground", 0x5B510},
+            {"AppDelegate::applicationDidFinishLaunching",  0x5B300},
+            {"AppDelegate::applicationDidEnterBackground",  0x5B4D0},
+            {"AppDelegate::applicationWillBecomeActive",    0x5B4B0},
+            {"AppDelegate::applicationWillResignActive",    0x5B5C0},
+            {"AppDelegate::trySaveGame",                    0x5B770},
 
             {"CCCircleWave::init",                          0x232F0},
             {"CCCircleWave::draw",                          0x23840},
 
-            {"EditorPauseLayer::onExitEditor",              0xA2EF0},
+            {"EditorPauseLayer::onExitEditor",              0xA2DF0},
 
-            {"FMODAudioEngine::sharedEngine",               0x32bf0},
+            {"FMODAudioEngine::sharedEngine",               0x32BC0},
             {"FMODAudioEngine::m_system",                   0x190},
 
-            {"GameLevelManager::sharedState",               0xf3a00},
-            {"GameLevelManager::saveLevel",                 0xf8130},
+            {"GameLevelManager::sharedState",               0xF38F0},
+            // {"GameLevelManager::saveLevel",                 0xF8148},
 
-            {"GameManager::sharedState",                    0x121540},
-            {"GameManager::getGameVariable",                0x128730},
-            {"GameManager::setGameVariable",                0x1284E0},
-            {"GameManager::updateCustomFPS",                0x12EC60},
+            {"GameManager::sharedState",                    0x120860},
+            {"GameManager::getGameVariable",                0x127A50},
+            {"GameManager::setGameVariable",                0x127800},
+            {"GameManager::updateCustomFPS",                0x12DEC0},
             {"GameManager::m_customFPSTarget",              0x384},
             {"GameManager::m_playLayer",                    0x198},
             {"GameManager::m_levelEditorLayer",             0x19C},
@@ -48,21 +48,21 @@ namespace gd::maps::v2_204 {
             {"GameObject::m_objectID",                      0x384},
             {"GameObject::m_startPosition",                 0x340},
 
-            {"GameStatsManager::sharedState",               0x167d90},
-            {"GameStatsManager::isItemUnlocked",            0x176570},
+            {"GameStatsManager::sharedState",               0x166FC0},
+            {"GameStatsManager::isItemUnlocked",            0x1756A0},
             {"GameStatsManager::uncompleteLevel",           0x170400},
             {"GameStatsManager::m_verifiedUserCoins",       0x1D8},
 
-            {"GJDropDownLayer::showLayer",                  0x1D6B70},
+            {"GJDropDownLayer::showLayer",                  0x1D5A80},
 
-            {"GJBaseGameLayer::init",                       0x190290},
-            {"GJBaseGameLayer::update",                     0x1BB780},
-            {"GJBaseGameLayer::destroyObject",              0x19CF50},
-            {"GJBaseGameLayer::pickupItem",                 0x19D100},
-            {"GJBaseGameLayer::setStartPosObject",          0x199E90},
-            {"GJBaseGameLayer::resetCamera",                0x1C22B0},
-            {"GJBaseGameLayer::handleButton",               0x1B69F0},
-            {"GJBaseGameLayer::processCommands",            0x1BD240},
+            {"GJBaseGameLayer::init",                       0x18F210},
+            {"GJBaseGameLayer::update",                     0x1BA700},
+            {"GJBaseGameLayer::destroyObject",              0x19BF90},
+            {"GJBaseGameLayer::pickupItem",                 0x19C140},
+            {"GJBaseGameLayer::setStartPosObject",          0x198E10},
+            {"GJBaseGameLayer::resetCamera",                0x1C1210},
+            {"GJBaseGameLayer::handleButton",               0x1B59A0},
+            // {"GJBaseGameLayer::processCommands",            0x1BD0E0},
             {"GJBaseGameLayer::m_isPracticeMode",           0x2A7C},
             {"GJBaseGameLayer::m_startPosCheckpoint",       0x2E14},
             {"GJBaseGameLayer::m_jumps",                    0x2EA4},
@@ -79,7 +79,7 @@ namespace gd::maps::v2_204 {
             {"GJBaseGameLayer::m_objects",                  0x884},
             {"GJBaseGameLayer::m_dTime",                    0x328},
 
-            {"GJGameLevel::getCoinKey",                     0x114220},
+            {"GJGameLevel::getCoinKey",                     0x113AF0},
             {"GJGameLevel::m_autoLevel",                    0x30C},
             {"GJGameLevel::m_demon",                        0x2F0},
             {"GJGameLevel::m_demonDifficulty",              0x2FC},
@@ -111,19 +111,19 @@ namespace gd::maps::v2_204 {
 
             {"LevelSettingsObject::m_resetCamera",          0x16B},
 
-            {"LevelEditorLayer::init",                      0x239A70},
+            {"LevelEditorLayer::init",                      0x238460},
 
-            {"MenuGameLayer::update",                       0x279c60},
-            {"MenuGameLayer::tryJump",                      0x2799A0},
+            // {"MenuGameLayer::update",                       0x279c60},
+            // {"MenuGameLayer::tryJump",                      0x2799A0},
             {"MenuGameLayer::m_playerObject",               0x154},
 
-            {"MenuLayer::init",                             0x27B450},
+            {"MenuLayer::init",                             0x279DF0},
 
-            {"OptionsLayer::create",                        0x2B01C0},
+            // {"OptionsLayer::create",                        0x2B0040},
 
-            {"PlayerObject::pushButton",                    0x2d1d30},
-            {"PlayerObject::releaseButton",                 0x2d1f70},
-            {"PlayerObject::flipGravity",                   0x2d36e0},
+            {"PlayerObject::pushButton",                    0x2D0060},
+            {"PlayerObject::releaseButton",                 0x2D02A0},
+            {"PlayerObject::flipGravity",                   0x2D1950},
             {"PlayerObject::m_position",                    0x854},
             {"PlayerObject::m_yAccel",                      0x790},
             {"PlayerObject::m_xAccel",                      0x630},
@@ -142,20 +142,20 @@ namespace gd::maps::v2_204 {
             {"PlayerObject::m_iconSpriteSecondary",         0x5f0},
             {"PlayerObject::m_isUpsideDown",                0x7AF},
 
-            {"PlayLayer::init",                             0x2DC4A0},
-            {"PlayLayer::~PlayLayer",                       0x2DC080},
-            {"PlayLayer::resetLevel",                       0x2EA130},
-            {"PlayLayer::levelComplete",                    0x2DDB60},
-            {"PlayLayer::onQuit",                           0x2EB480},
-            {"PlayLayer::destroyPlayer",                    0x2E6730},
-            {"PlayLayer::addObject",                        0x2E19B0},
-            {"PlayLayer::startMusic",                       0x2EB3A0},
-            {"PlayLayer::resetLevelFromStart",              0x2EA090},
-            {"PlayLayer::markCheckpoint",                   0x2E8550},
-            {"PlayLayer::togglePracticeMode",               0x2EAD30},
-            {"PlayLayer::playEndAnimationToPos",            0x2dfe00},
-            {"PlayLayer::playPlatformerEndAnimationToPos",  0x2e05e0},
-            {"PlayLayer::getCurrentPercentInt",             0x2e6680},
+            {"PlayLayer::init",                             0x2DA660},
+            {"PlayLayer::~PlayLayer",                       0x2DA240},
+            {"PlayLayer::resetLevel",                       0x2E8200},
+            {"PlayLayer::levelComplete",                    0x2DBC80},
+            {"PlayLayer::onQuit",                           0x2E9550},
+            {"PlayLayer::destroyPlayer",                    0x2E4840},
+            {"PlayLayer::addObject",                        0x2DFAB0},
+            {"PlayLayer::startMusic",                       0x2E9470},
+            {"PlayLayer::resetLevelFromStart",              0x2E8160},
+            // {"PlayLayer::markCheckpoint",                   0x2E7f60},
+            // {"PlayLayer::togglePracticeMode",               0x2EA740},
+            {"PlayLayer::playEndAnimationToPos",            0x2DDF10},
+            {"PlayLayer::playPlatformerEndAnimationToPos",  0x2DE6F0},
+            {"PlayLayer::getCurrentPercentInt",             0x2E4780},
 
             {"StartPosObject::m_levelSettings",             0x678},
     };
@@ -176,7 +176,7 @@ namespace gd::maps::v2_204 {
 
             {"cocos2d::CCEGLView::pollEvents",               CC_SYM("?pollEvents@CCEGLView@cocos2d@@QAEXXZ")},
             {"cocos2d::CCEGLView::swapBuffers",              CC_SYM("?swapBuffers@CCEGLView@cocos2d@@UAEXXZ")},
-            {"cocos2d::CCEGLView::toggleFullScreen",         CC_SYM("?toggleFullScreen@CCEGLView@cocos2d@@QAEX_N0@Z")},
+            {"cocos2d::CCEGLView::toggleFullScreen",         CC_SYM("?toggleFullScreen@CCEGLView@cocos2d@@QAEX_N@Z")},
             {"cocos2d::CCEGLView::getWindow",                CC_SYM("?getWindow@CCEGLView@cocos2d@@QBEPAUGLFWwindow@@XZ")},
             {"cocos2d::CCEGLView::sharedOpenGLView",         CC_SYM("?sharedOpenGLView@CCEGLView@cocos2d@@SAPAV12@XZ")},
             {"cocos2d::CCEGLView::showCursor",               CC_SYM("?showCursor@CCEGLView@cocos2d@@QAEX_N@Z")},

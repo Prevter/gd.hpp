@@ -8,10 +8,10 @@
 // Maps for all versions
 #include <dash/mappings/patterns.hpp>
 #include <dash/mappings/2204.hpp>
-// #include <dash/mappings/2202.hpp>
+#include <dash/mappings/2203.hpp>
+#include <dash/mappings/2202.hpp>
 // #include <dash/mappings/2201.hpp>
 // #include <dash/mappings/2200.hpp>
-#include <dash/mappings/2203.hpp>
 // #include <dash/mappings/2113.hpp>
 
 #include <cstdio>
@@ -26,8 +26,8 @@ namespace gd::maps {
             return v2_204::addresses;
         } else if (version == "2.203") {
             return v2_203::addresses;
-        // } else if (version == "2.202") {
-        //     return v2_202::addresses;
+        } else if (version == "2.202") {
+            return v2_202::addresses;
         // } else if (version == "2.201") {
         //     return v2_201::addresses;
         // } else if (version == "2.200") {
@@ -49,8 +49,8 @@ namespace gd::maps {
             return v2_204::signatures;
         } else if (version == "2.203") {
             return v2_203::signatures;
-        // } else if (version == "2.202") {
-        //     return v2_202::signatures;
+        } else if (version == "2.202") {
+            return v2_202::signatures;
         // } else if (version == "2.201") {
         //     return v2_201::signatures;
         // } else if (version == "2.200") {

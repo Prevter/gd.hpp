@@ -113,6 +113,10 @@ namespace gd::maps::v2_203 {
 
             {"LevelEditorLayer::init",                      0x239900},
 
+            // {"MenuGameLayer::update",                       0x279c60},
+            // {"MenuGameLayer::tryJump",                      0x2799A0},
+            {"MenuGameLayer::m_playerObject",               0x154},
+
             {"MenuLayer::init",                             0x27B2E0},
 
             {"OptionsLayer::create",                        0x2B0040},
