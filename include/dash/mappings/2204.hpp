@@ -45,6 +45,7 @@ namespace gd::maps::v2_204 {
             {"GameManager::m_menuLayer",                    0x1A8},
             {"GameManager::m_playerName",                   0x1D0},
 
+            {"GameObject::getObjectRect",                   0x13A570},
             {"GameObject::m_objectID",                      0x384},
             {"GameObject::m_startPosition",                 0x340},
 
@@ -78,6 +79,7 @@ namespace gd::maps::v2_204 {
             {"GJBaseGameLayer::m_gameState",                0x148},
             {"GJBaseGameLayer::m_objects",                  0x884},
             {"GJBaseGameLayer::m_dTime",                    0x328},
+            {"GJBaseGameLayer::m_isFlipped",                0x36e},
 
             {"GJGameLevel::getCoinKey",                     0x114220},
             {"GJGameLevel::m_autoLevel",                    0x30C},
@@ -141,6 +143,7 @@ namespace gd::maps::v2_204 {
             {"PlayerObject::m_isSliding",                   0x7FC},
             {"PlayerObject::m_iconSpriteSecondary",         0x5f0},
             {"PlayerObject::m_isUpsideDown",                0x7AF},
+            {"PlayerObject::m_isDead",                      0x7b0},
 
             {"PlayLayer::init",                             0x2DC4A0},
             {"PlayLayer::~PlayLayer",                       0x2DC080},
@@ -156,6 +159,9 @@ namespace gd::maps::v2_204 {
             {"PlayLayer::playEndAnimationToPos",            0x2dfe00},
             {"PlayLayer::playPlatformerEndAnimationToPos",  0x2e05e0},
             {"PlayLayer::getCurrentPercentInt",             0x2e6680},
+            {"PlayLayer::postUpdate",                       0x2E7220},
+            {"PlayLayer::updateDebugDraw",                  0x1986F0},
+            {"PlayLayer::m_debugDrawNode",                  0x2d70},
 
             {"StartPosObject::m_levelSettings",             0x678},
     };
@@ -173,6 +179,9 @@ namespace gd::maps::v2_204 {
             {"cocos2d::CCDirector::getWinSize",              CC_SYM("?getWinSize@CCDirector@cocos2d@@QAE?AVCCSize@2@XZ")},
             {"cocos2d::CCDirector::getOpenGLView",           CC_SYM("?getOpenGLView@CCDirector@cocos2d@@QAEPAVCCEGLView@2@XZ")},
             {"cocos2d::CCDirector::getDeltaTime",            CC_SYM("?getDeltaTime@CCDirector@cocos2d@@UAEMXZ")},
+
+            {"cocos2d::CCDrawNode::clear",                   CC_SYM("?clear@CCDrawNode@cocos2d@@QAEXXZ")},
+            {"cocos2d::CCDrawNode::drawPolygon",             CC_SYM("?drawPolygon@CCDrawNode@cocos2d@@QAE_NPAVCCPoint@2@IABU_ccColor4F@2@M1@Z")},
 
             {"cocos2d::CCEGLView::pollEvents",               CC_SYM("?pollEvents@CCEGLView@cocos2d@@QAEXXZ")},
             {"cocos2d::CCEGLView::swapBuffers",              CC_SYM("?swapBuffers@CCEGLView@cocos2d@@UAEXXZ")},

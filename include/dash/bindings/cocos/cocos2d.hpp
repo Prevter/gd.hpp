@@ -4,6 +4,7 @@
 #include "CCArray.hpp"
 #include "CCDictionary.hpp"
 #include "CCDirector.hpp"
+#include "CCDrawNode.hpp"
 #include "CCEGLView.hpp"
 #include "CCGeometry.hpp"
 #include "CCLabelBMFont.hpp"

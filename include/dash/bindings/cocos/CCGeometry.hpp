@@ -29,6 +29,25 @@ namespace gd::cocos2d {
         CCRect(float x, float y, float width, float height) : origin(x, y), size(width, height) {}
 
         CCRect(CCPoint origin, CCSize size) : origin(origin), size(size) {}
+
+        [[nodiscard]] inline float getMinX() const {
+            return origin.x;
+        } /// return the leftmost x-value of current rect
+        [[nodiscard]] inline float getMidX() const {
+            return (float)(origin.x + size.width / 2.0);
+        } /// return the midpoint x-value of current rect
+        [[nodiscard]] inline float getMaxX() const {
+            return (float)(origin.x + size.width);
+        } /// return the rightmost x-value of current rect
+        [[nodiscard]] inline float getMinY() const {
+            return origin.y;
+        } /// return the bottommost y-value of current rect
+        [[nodiscard]] inline float getMidY() const {
+            return (float)(origin.y + size.height / 2.0);
+        } /// return the midpoint y-value of current rect
+        [[nodiscard]] inline float getMaxY() const {
+            return origin.y + size.height;
+        } /// return the topmost y-value of current rect
     };
 
     // CCPoint operators

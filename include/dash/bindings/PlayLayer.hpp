@@ -67,5 +67,17 @@ namespace gd {
             SETUP_METHOD(void, "PlayLayer::destroyPlayer", __thiscall, PlayLayer *, PlayerObject *, GameObject *);
             method(this, player, object);
         }
+
+        inline void postUpdate(float dt) {
+            SETUP_METHOD(void, "PlayLayer::postUpdate", __thiscall, PlayLayer *, float);
+            method(this, dt);
+        }
+
+        inline void updateDebugDraw() {
+            SETUP_METHOD(void, "PlayLayer::updateDebugDraw", __thiscall, PlayLayer *);
+            method(this);
+        }
+
+        SETUP_MEMBER(cocos2d::CCDrawNode*, m_debugDrawNode, "PlayLayer::m_debugDrawNode")
     };
 }

@@ -72,5 +72,6 @@ namespace gd {
         SETUP_MEMBER(GJGameState, m_gameState, "GJBaseGameLayer::m_gameState")
         SETUP_MEMBER(cocos2d::CCArray*, m_objects, "GJBaseGameLayer::m_objects")
         SETUP_MEMBER(double, m_dTime, "GJBaseGameLayer::m_dTime")
+        SETUP_MEMBER(bool, m_isFlipped, "GJBaseGameLayer::m_isFlipped")
     };
 }

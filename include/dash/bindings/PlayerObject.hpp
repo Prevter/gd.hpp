@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../internal.hpp"
+#include "GameObject.hpp"
 
 namespace gd {
     enum class PlayerButton {
@@ -13,7 +14,7 @@ namespace gd {
         class CCSprite;
     }
 
-    class PlayerObject {
+    class PlayerObject : public GameObject {
     public:
         inline void releaseButton(PlayerButton btn) {
             SETUP_METHOD(void, "PlayerObject::releaseButton", __thiscall, PlayerObject*, PlayerButton);
@@ -47,5 +48,6 @@ namespace gd {
         SETUP_MEMBER(bool, m_isSliding, "PlayerObject::m_isSliding")
         SETUP_MEMBER(cocos2d::CCSprite*, m_iconSpriteSecondary, "PlayerObject::m_iconSpriteSecondary")
         SETUP_MEMBER(bool, m_isUpsideDown, "PlayerObject::m_isUpsideDown")
+        SETUP_MEMBER(bool, m_isDead, "PlayerObject::m_isDead")
     };
 }
