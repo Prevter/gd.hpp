@@ -80,6 +80,7 @@ namespace gd::maps::v2_204 {
             {"GJBaseGameLayer::m_objects",                  0x884},
             {"GJBaseGameLayer::m_dTime",                    0x328},
             {"GJBaseGameLayer::m_isFlipped",                0x36e},
+            {"GJBaseGameLayer::m_isTestMode",               0x2AAC},
 
             {"GJGameLevel::getCoinKey",                     0x114220},
             {"GJGameLevel::m_autoLevel",                    0x30C},
