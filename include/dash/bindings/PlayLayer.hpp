@@ -79,5 +79,7 @@ namespace gd {
         }
 
         SETUP_MEMBER(cocos2d::CCDrawNode*, m_debugDrawNode, "PlayLayer::m_debugDrawNode")
+        SETUP_MEMBER(bool, m_isPaused, "PlayLayer::m_isPaused")
+        SETUP_MEMBER(bool, m_hasCompletedLevel, "PlayLayer::m_hasCompletedLevel")
     };
 }

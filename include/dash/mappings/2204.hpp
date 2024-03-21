@@ -163,6 +163,8 @@ namespace gd::maps::v2_204 {
             {"PlayLayer::postUpdate",                       0x2E7220},
             {"PlayLayer::updateDebugDraw",                  0x1986F0},
             {"PlayLayer::m_debugDrawNode",                  0x2d70},
+            {"PlayLayer::m_isPaused",                       0x2F17},
+            {"PlayLayer::m_hasCompletedLevel",              0x2EB1},
 
             {"StartPosObject::m_levelSettings",             0x678},
     };
