@@ -72,4 +72,40 @@ namespace gd::hook::PlayLayer {
 
     /// @brief Installs the hook for PlayLayer::destroyPlayer.
     SETUP_HOOK("PlayLayer::destroyPlayer", void, destroyPlayer, gd::PlayLayer*, gd::PlayerObject*, gd::GameObject*)
+
+    // PlayLayer::postUpdate
+
+    inline static uintptr_t postUpdate_addr = 0x0;
+    inline static std::function<void(gd::PlayLayer*, float)> postUpdate_hook;
+
+    /// @brief Calls the original PlayLayer::postUpdate function.
+    inline static void postUpdate(gd::PlayLayer* self, float dt) {
+        return reinterpret_cast<void (__thiscall *)(gd::PlayLayer*, float)>(postUpdate_addr)(self, dt);
+    }
+
+    /// @brief Wrapper for the PlayLayer::postUpdate hook.
+    inline void __fastcall postUpdateHook(gd::PlayLayer* self, int, float dt) {
+        return postUpdate_hook(self, dt);
+    }
+
+    /// @brief Installs the hook for PlayLayer::postUpdate.
+    SETUP_HOOK("PlayLayer::postUpdate", void, postUpdate, gd::PlayLayer*, float)
+
+    // PlayLayer::fullReset
+
+    inline static uintptr_t fullReset_addr = 0x0;
+    inline static std::function<void(gd::PlayLayer*)> fullReset_hook;
+
+    /// @brief Calls the original PlayLayer::fullReset function.
+    inline static void fullReset(gd::PlayLayer* self) {
+        return reinterpret_cast<void (__thiscall *)(gd::PlayLayer*)>(fullReset_addr)(self);
+    }
+
+    /// @brief Wrapper for the PlayLayer::fullReset hook.
+    inline void __fastcall fullResetHook(gd::PlayLayer* self) {
+        return fullReset_hook(self);
+    }
+
+    /// @brief Installs the hook for PlayLayer::fullReset.
+    SETUP_HOOK("PlayLayer::fullReset", void, fullReset, gd::PlayLayer*)
 }

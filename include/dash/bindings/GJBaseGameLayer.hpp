@@ -74,5 +74,6 @@ namespace gd {
         SETUP_MEMBER(double, m_dTime, "GJBaseGameLayer::m_dTime")
         SETUP_MEMBER(bool, m_isFlipped, "GJBaseGameLayer::m_isFlipped")
         SETUP_MEMBER(bool, m_isTestMode, "GJBaseGameLayer::m_isTestMode")
+        SETUP_MEMBER(float, m_levelLength, "GJBaseGameLayer::m_levelLength")
     };
 }

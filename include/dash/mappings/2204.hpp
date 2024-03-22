@@ -81,6 +81,7 @@ namespace gd::maps::v2_204 {
             {"GJBaseGameLayer::m_dTime",                    0x328},
             {"GJBaseGameLayer::m_isFlipped",                0x36e},
             {"GJBaseGameLayer::m_isTestMode",               0x2AAC},
+            {"GJBaseGameLayer::m_levelLength",              0x2AA0},
 
             {"GJGameLevel::getCoinKey",                     0x114220},
             {"GJGameLevel::m_autoLevel",                    0x30C},
@@ -162,6 +163,7 @@ namespace gd::maps::v2_204 {
             {"PlayLayer::getCurrentPercentInt",             0x2e6680},
             {"PlayLayer::postUpdate",                       0x2E7220},
             {"PlayLayer::updateDebugDraw",                  0x1986F0},
+            {"PlayLayer::fullReset",                        0x2E9F80},
             {"PlayLayer::m_debugDrawNode",                  0x2d70},
             {"PlayLayer::m_isPaused",                       0x2F17},
             {"PlayLayer::m_hasCompletedLevel",              0x2EB1},
@@ -185,6 +187,7 @@ namespace gd::maps::v2_204 {
 
             {"cocos2d::CCDrawNode::clear",                   CC_SYM("?clear@CCDrawNode@cocos2d@@QAEXXZ")},
             {"cocos2d::CCDrawNode::drawPolygon",             CC_SYM("?drawPolygon@CCDrawNode@cocos2d@@QAE_NPAVCCPoint@2@IABU_ccColor4F@2@M1@Z")},
+            {"cocos2d::CCDrawNode::drawCircle",              CC_SYM("?drawCircle@CCDrawNode@cocos2d@@QAE_NABVCCPoint@2@MABU_ccColor4F@2@M1I@Z_SEH")},
 
             {"cocos2d::CCEGLView::pollEvents",               CC_SYM("?pollEvents@CCEGLView@cocos2d@@QAEXXZ")},
             {"cocos2d::CCEGLView::swapBuffers",              CC_SYM("?swapBuffers@CCEGLView@cocos2d@@UAEXXZ")},
