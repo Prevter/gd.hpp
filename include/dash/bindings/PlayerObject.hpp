@@ -49,5 +49,6 @@ namespace gd {
         SETUP_MEMBER(cocos2d::CCSprite*, m_iconSpriteSecondary, "PlayerObject::m_iconSpriteSecondary")
         SETUP_MEMBER(bool, m_isUpsideDown, "PlayerObject::m_isUpsideDown")
         SETUP_MEMBER(bool, m_isDead, "PlayerObject::m_isDead")
+        SETUP_MEMBER(float, m_vehicleSize, "PlayerObject::m_vehicleSize")
     };
 }

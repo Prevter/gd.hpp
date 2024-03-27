@@ -82,6 +82,7 @@ namespace gd::maps::v2_204 {
             {"GJBaseGameLayer::m_isFlipped",                0x36e},
             {"GJBaseGameLayer::m_isTestMode",               0x2AAC},
             {"GJBaseGameLayer::m_levelLength",              0x2AA0},
+            {"GJBaseGameLayer::m_debugDrawNode",            0x2d70},
 
             {"GJGameLevel::getCoinKey",                     0x114220},
             {"GJGameLevel::m_autoLevel",                    0x30C},
@@ -146,6 +147,7 @@ namespace gd::maps::v2_204 {
             {"PlayerObject::m_iconSpriteSecondary",         0x5f0},
             {"PlayerObject::m_isUpsideDown",                0x7AF},
             {"PlayerObject::m_isDead",                      0x7b0},
+            {"PlayerObject::m_vehicleSize",                 0x7e0},
 
             {"PlayLayer::init",                             0x2DC4A0},
             {"PlayLayer::~PlayLayer",                       0x2DC080},
@@ -164,7 +166,6 @@ namespace gd::maps::v2_204 {
             {"PlayLayer::postUpdate",                       0x2E7220},
             {"PlayLayer::updateDebugDraw",                  0x1986F0},
             {"PlayLayer::fullReset",                        0x2E9F80},
-            {"PlayLayer::m_debugDrawNode",                  0x2d70},
             {"PlayLayer::m_isPaused",                       0x2F17},
             {"PlayLayer::m_hasCompletedLevel",              0x2EB1},
 

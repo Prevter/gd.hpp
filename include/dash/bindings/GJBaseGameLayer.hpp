@@ -75,5 +75,6 @@ namespace gd {
         SETUP_MEMBER(bool, m_isFlipped, "GJBaseGameLayer::m_isFlipped")
         SETUP_MEMBER(bool, m_isTestMode, "GJBaseGameLayer::m_isTestMode")
         SETUP_MEMBER(float, m_levelLength, "GJBaseGameLayer::m_levelLength")
+        SETUP_MEMBER(cocos2d::CCDrawNode*, m_debugDrawNode, "GJBaseGameLayer::m_debugDrawNode")
     };
 }
