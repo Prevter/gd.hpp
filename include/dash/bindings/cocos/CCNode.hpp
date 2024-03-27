@@ -30,5 +30,15 @@ namespace gd::cocos2d {
             return method(this, visible);
         }
 
+        inline CCPoint getPosition() {
+            SETUP_METHOD_SIG(void, "cocos2d::CCNode::getPosition", __thiscall, CCNode*, float*, float*);
+            float x, y;
+            method(this, &x, &y);
+            return {x, y};
+        }
+
+        inline float getPositionX() { return getPosition().x; }
+        inline float getPositionY() { return getPosition().y; }
+
     };
 }

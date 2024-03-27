@@ -115,6 +115,13 @@ namespace gd::maps::v2_204 {
             {"GJGameState::m_cameraPosition",               0x214},
 
             {"LevelSettingsObject::m_resetCamera",          0x16B},
+            {"LevelSettingsObject::m_startMode",            0x10C},
+            {"LevelSettingsObject::m_startSpeed",           0x110},
+            {"LevelSettingsObject::m_startMini",            0x114},
+            {"LevelSettingsObject::m_startDual",            0x115},
+            {"LevelSettingsObject::m_reverseGameplay",      0x136},
+            {"LevelSettingsObject::m_isFlipped",            0x135},
+            {"LevelSettingsObject::m_mirrorMode",           0x116},
 
             {"LevelEditorLayer::init",                      0x239A70},
 
@@ -214,6 +221,7 @@ namespace gd::maps::v2_204 {
             {"cocos2d::CCNode::setZOrder",                   CC_SYM("?setZOrder@CCNode@cocos2d@@UAEXH@Z")},
             {"cocos2d::CCNode::setPosition",                 CC_SYM("?setPosition@CCNode@cocos2d@@UAEXABVCCPoint@2@@Z")},
             {"cocos2d::CCNode::setVisible",                  CC_SYM("?setVisible@CCNode@cocos2d@@UAEX_N@Z")},
+            {"cocos2d::CCNode::getPosition",                 CC_SYM("?getPosition@CCNode@cocos2d@@UAEXPAM0@Z")},
 
             {"cocos2d::CCScheduler::update",                 CC_SYM("?update@CCScheduler@cocos2d@@UAEXM@Z")},
 

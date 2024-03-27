@@ -2,9 +2,10 @@
 
 #include "../internal.hpp"
 #include "cocos/CCGeometry.hpp"
+#include "cocos/CCNode.hpp"
 
 namespace gd {
-    class GameObject {
+    class GameObject : public cocos2d::CCNode {
     public:
         inline cocos2d::CCRect* getObjectRect() {
             SETUP_METHOD(cocos2d::CCRect*, "GameObject::getObjectRect", __thiscall, GameObject*);
